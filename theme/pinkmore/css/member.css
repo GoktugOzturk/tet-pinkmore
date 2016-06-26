@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+/* giriş için sayfa */
+.loginPage button.facebook {
+    background-color : #3B5998 !important;
+    color            : #FFFFFF;
+    border-color     : #3B5998;
+    width            : 210px;
+    font-weight      : 300;
+}
+
+.loginPage button.googleplus {
+    background-color : #DD4B39 !important;
+    color            : #FFFFFF;
+    border-color     : #DD4B39;
+    width            : 210px;
+    font-weight      : 300;
+}
+
+.textButton {
+    margin-left : 10px;
+    margin-top  : 2px;
+    display     : inline-block;
+}
+
+.loginPage {
+    margin-bottom : 100px;
+}
+
+/* kullanıcı ayar sayfaları */
+/*panel ve içerik sayfaları*/
+.contentPageMenu ul a {
+    margin-left : 10px;
+}
+
+.contentPageMenu ul a.active {
+    color : #f06892;
+}
+
+.contentPageMenu ul li {
+    margin-bottom : 8px;
+    list-style    : none;
+}
+
+.contentPageMenu .divider {
+    height           : 1px;
+    margin           : 10px 0;
+    overflow         : hidden;
+    background-color : #E5E5E5;
+}
+
+/*sipariş detayları*/
+.contentPage .orderNumber {
+    width : 150px;
+}
+
+.contentPage .orderDate {
+    width : 170px;
+}
+
+.contentPage .orderPrice {
+    width : 110px;
+}
+
+.contentPage .orderStatus {
+}
+
+.contentPage .orderDetails {
+    width : 100px;
+}
+
+.contentPage .orderDetailGeneral {
+    width       : 182px;
+    font-size   : 14px;
+    font-weight : 700;
+}
+
+.contentPage table.shipping {
+    margin-bottom : 0;
+}
+
+.contentPage .oneOrder .img {
+    width : 65px;
+}
+
+.contentPage .oneOrder .img img {
+    border : 1px solid #E1E1E1;
+}
+
+.contentPage .oneOrder .link {
+    width : 470px;
+}
+
+.contentPage .oneOrder .link a {
+    max-width     : 470px;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    display       : inline-block;
+    overflow      : hidden;
+}
+
+.contentPage .oneOrder .number {
+    width      : 50px;
+    text-align : center;
+}
+
+.contentPage .oneOrder .price {
+    font-weight : 700;
+}
+
+.contentPage .oneOrderView {
+    padding       : 10px;
+    border        : 1px solid #BBBBBB;
+    margin-bottom : 20px;
+}
+
+.contentPage .oneOrderView .oneOrder {
+    margin-bottom : 0 !important;
+}
+
+.contentPage .prLabelArea {
+    position : relative;
+}
+
+.contentPage .prLabel {
+    position  : absolute;
+    display   : block;
+    right     : 1px;
+    top       : 1px;
+    height    : 20px;
+    padding   : 5px 6px 6px 6px;
+    font-size : 11px;
+}
+
+.contentPage .prLabel .label {
+    padding : .3em .6em .3em;
+}
+
+.modal-content .menRadio {
+    margin-left : 15px;
+}
+
+.contentPage .form-horizontal .form-group {
+    margin-left  : 0;
+    margin-right : 0;
+}
+
+.contentPage .addressInfo .name {
+    max-width     : 130px;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    overflow      : hidden;
+}
+
+.contentPage .addressInfo .address2 {
+    max-width     : 340px;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    overflow      : hidden;
+}
+
+.contentPage .section_buttons {
+    position : absolute;
+    right    : 8px;
+    top      : 3px;
+}
+
+.contentPage .sm1Area { width: 72px;}
+.contentPage .sm3Area { width: 153px;}
+.media-heading { padding: 0;}
+
+
+@media only screen and (max-width:767px){
+  .oneOrderViewMbl h2 {
+    text-indent: 0;
+    margin-left: 0;
+    /*float: left;*/
+    text-align: left;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

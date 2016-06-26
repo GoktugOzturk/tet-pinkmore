@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<?= view::load("head") ?>
+<body lang="tr">
+<?= view::facebook_sdk() ?>
+<?= view::load("header") ?>
+<?= view::showMessages('class="messageBox container" style="display:none"') ?>
+<div id="bodyWrapper" class="container mt">
+    <div class="row">
+        <? if (view::has_blocks()) { ?>
+            <? view::show_blocks("col-xs-3") ?>
+            <? view::show_contents("col-xs-9") ?>
+        <? } else { ?>
+            <div class="col-xs-12">
+                <? view::show_contents() ?>
+            </div>
+        <? } ?>
+    </div>
+</div>
+<!-- container sonu -->
+<?= view::load("footer") ?>
+</body>
+</html>

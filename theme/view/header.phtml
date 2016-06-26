@@ -1,0 +1,101 @@
+<?
+/**
+ * @var string $themeDir
+ */
+?>
+<header>
+    <div class="container">
+        <a href="javascript:;" class="hamburgerMenu2">
+            <img src="<?= $themeDir ?>/img/hamburgerMenu.png" alt="Menü" class="hamburgerMenu"/>
+            <span class="hamburgerMenuText">KATEGORİ</span>
+        </a>
+        <div class="headerLeft">
+            <ul id="headerLeft">
+                <li><a>ÜCRETSİZ KARGO</a></li>
+                <li><a>AYNI GÜN KARGO</a></li>
+                <li><a>ÜCRETSİZ İADE VE DEĞİŞİM</a></li>
+                <li><a>KIRIK KARGO GARANTİSİ</a></li>
+            </ul>
+        </div>
+        <!-- headerLeft -->
+        <div class="headerRight">
+            <ul id="headerRight" class="userMenu">
+                <? if (session::isMember()) { ?>
+                    <li class="dropdown"><a role="button" class="dropdown-toggle" href="javascript:" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Hesabım [<?= mb_strtoupper(session::get("firstName")) ?>] <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/account/details"><i class="glyphicon glyphicon-user"></i> Kişisel Bilgilerim</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/account/addresses"><i class="glyphicon glyphicon-list-alt"></i> Adreslerim</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/account/shopping_checks"><i class="glyphicon glyphicon-tag"></i> Alışveriş Çeklerim</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/siparis-takip"><i class="glyphicon glyphicon-ok"></i> Siparişlerim</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/order/defectreturn"><i class="glyphicon glyphicon-refresh"></i> Arıza/İade Bildirimi</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/support/tickets"><i class="glyphicon glyphicon-comment"></i> Destek Taleplerim</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/support/request"><i class="glyphicon glyphicon-plus-sign"></i> Yeni Talep Oluştur</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/member/logout"><i class="glyphicon glyphicon-send"></i> Çıkış Yap</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a role="button" href="<?= app::getUrl(ACTIVE_APP, "http") ?>/siparis-takip">SİPARİŞ TAKİP</a></li>
+                    <li><a role="button" href="<?= app::getUrl(ACTIVE_APP, "http") ?>/iletisim">İLETİŞİM</a></li>
+                <? } else { ?>
+                    <li><a role="button" class="signup-required" href="javascript:">ÜYE OL</a></li>
+                    <li><a role="button" class="login-required" href="javascript:">GİRİŞ YAP</a></li>
+                    <li><a role="button" class="login-required" href="<?= app::getUrl(ACTIVE_APP, "http") ?>/siparis-takip">SİPARİŞ TAKİP</a></li>
+                    <li><a role="button" href="<?= app::getUrl(ACTIVE_APP, "http") ?>/iletisim">İLETİŞİM</a></li>
+                <? } ?>
+            </ul>
+            <!-- #headerRight -->
+            <div class="clear"></div>
+            <ul class="yBar">
+                <li>
+                    <a href="javascript:;" class="inputOpen">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <div>ÜRÜN ARA</div>
+                    </a>
+                    <div class="yBarInput">
+                        <form id="search" action="/ara">
+                            <input type="text" name="q" id="searchQuery" placeholder="ürün ara..">
+                            <a href="javascript:;"><img src="<?= $themeDir ?>/img/close.png" alt="Kapat"/></a>
+                        </form>
+                    </div>
+                </li>
+                <li>
+                    <a href="/account" class="userHeader">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <div>HESABIM</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/cart">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <div>SEPETİM</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- headerRight -->
+    </div>
+    <a href="<?= app::getUrl(ACTIVE_APP, "http") ?>" class="logo"><img src="<?= $themeDir ?>/img/logo.png" alt="logo"/></a>
+    <div class="clear"></div>
+    <div class="container">
+        <?= menu::generateSiteHeaderMenu() ?>
+        <div class="clear"></div>
+        <div class="bar">
+            <span>TÜM SİPARİŞLERDE <b>KARGO BEDAVA</b></span>
+            <div class="barRight">50TL ÜZERİ SİPARİŞLERDE GEÇERLİDİR.</div>
+        </div>
+        <!-- bar -->
+    </div>
+    <!-- container -->
+</header>
+<div class="leftMenu">
+    <span class="leftMenuTitle">Kategori</span>
+</div>
+<!-- leftMenu -->
+<div class="rightMenu">
+    <span class="leftMenuTitle">Menü</span>
+</div>
+<!-- rightMenu -->
+<div class="headerFix"></div>

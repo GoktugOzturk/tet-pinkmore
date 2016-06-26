@@ -1,0 +1,47 @@
+<?
+/**
+ * @var array $list
+ * @var float $price
+ * @var int $maxInstallmentCount
+ */
+?>
+<div id="fullInstallmentTable" class="row mt">
+    <? foreach ($list as $cardGroup => $cardData) { ?>
+        <div class="col-xs-3">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th class="CardBrand CardBrand-<?= $cardData['card_family_slug'] ?> text-center" colspan="3"></th>
+                </tr>
+                <tr>
+                    <th>Taksit</th>
+                    <th class="text-right">Aylık</th>
+                    <th class="text-right">Toplam</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Tek Çekim</td>
+                    <td class="r"><?= number_format($price, 2); ?></td>
+                    <td class="r b"><?= number_format($price, 2); ?></td>
+                </tr>
+                <? for ($option = 2; $option <= $maxInstallmentCount; $option++) { ?>
+                    <tr>
+                        <? if (isset($cardData['installments'][$option])) { ?>
+                            <td><?= $cardData['installments'][$option]['text'] ?></td>
+                            <td class="r"><?= number_format($cardData['installments'][$option]['installmentPrice'], 2) ?></td>
+                            <td class="r <?= number_format($cardData['installments'][$option]['installment_total'], 2) == number_format($price, 2) ? 'b' : '' ?>">
+                                <?= number_format($cardData['installments'][$option]['installment_total'], 2) ?>
+                            </td>
+                        <? } else { ?>
+                            <td> <?= $option ?> Taksit</td>
+                            <td class="r">-</td>
+                            <td class="r">-</td>
+                        <? } ?>
+                    </tr>
+                <? } ?>
+                </tbody>
+            </table>
+        </div>
+    <? } ?>
+</div>

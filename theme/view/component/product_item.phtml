@@ -1,0 +1,60 @@
+<?
+/**
+ * @var product_item $product
+ */
+?>
+<div class="productItem" data-id="<?= $product->obProduct->product_id ?>" data-name="<?= htmlspecialchars($product->obProduct->product_name) ?>"
+    data-url="<?= $product->obProduct->getUrl($product->urlParams) ?>">
+    <div class="itemImg">
+        <? if ($product->hoverCartButton) { ?>
+            <a href="javascript:void(0);" onclick="addToCart('<?= $product->obProduct->product_id ?>', '1', '<?= $product->from ?>')" class="addToCart" style=""></a>
+        <? }
+        if ($product->hasLink) {
+            echo '<a href="' . $product->obProduct->getUrl($product->urlParams) . '">';
+        }
+        echo $product->obProduct->getPhotoImgTag($product->photoSize);
+        if ($product->hasLink) {
+            echo '</a>';
+        } ?>
+    </div>
+    <div class="itemName">
+        <? if ($product->hasLink) {
+            echo '<a href="' . $product->obProduct->getUrl($product->urlParams) . '">';
+        }
+        if ($product->showName) {
+            echo '<span class="productName">';
+        }
+        if ($product->showBrand) {
+            echo '<span class="brand">' . $product->obProduct->brand_name . '</span> ';
+        }
+        if ($product->showName) {
+            echo $product->obProduct->product_name . '</span>';
+        }
+        if ($product->hasLink) {
+            echo '</a>';
+        } ?>
+    </div>
+    <div class="itemPrice">
+        <span class="price"><?= icms::format_money($product->obProduct->getSalePrice()) ?></span>
+        <? if ($product->showBasePrice) { ?>
+            <span class="oldPrice"><?= icms::format_money($product->obProduct->getBasePrice()) ?></span>
+        <? } ?>
+    </div>
+    <? if ($product->showItemOptions && ($product->freeShipping || $product->fastShipping || $product->limitedStock || $product->specialPrice)) { ?>
+        <div class="itemOptions">
+            <? if ($product->freeShipping && $product->obProduct->hasBadge(ob_product::BADGE_FREE_SHIPPING)) { ?>
+                <span class="freeShipping">KARGO BEDAVA</span>
+            <? } ?>
+            <? if ($product->fastShipping && $product->obProduct->warehouse_stock) { ?>
+                <? if ($product->limitedStock && $product->obProduct->warehouse_stock <= 5) { ?>
+                    <span class="limitedStock">SON <?= $product->obProduct->warehouse_stock ?> ÜRÜN</span>
+                <? } else { ?>
+                    <span class="fastShipping">HIZLI KARGO</span>
+                <? } ?>
+            <? } ?>
+            <? if ($product->specialPrice /*&& $product->obProduct->marketingCampaignId*/) { ?>
+                <span class="specialPrice">ÖZEL FİYATLI</span>
+            <? } ?>
+        </div>
+    <? } ?>
+</div>

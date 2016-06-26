@@ -1,0 +1,364 @@
+@charset "UTF-8";
+
+/* Sepet sayfası */
+.cartItemTitles {
+    border-bottom : 1px solid #E1E1E1;
+    padding       : 5px 0;
+    color         : #666666;
+    font-size     : 14px;
+    font-weight   : 600;
+}
+
+.cartOneProduct {
+    border-bottom  : 1px solid #E1E1E1;
+    padding-bottom : 10px;
+}
+
+.cartOneProduct a {
+    color         : #333333;
+    font-size     : 15px;
+    font-weight   : 600;
+    margin-bottom : 7px;
+    display       : inline-block;
+}
+
+.cartOneProduct a:hover {
+    color : #EF4177;
+}
+
+.cartOneProduct .itemPrice .pr {
+    color       : #EF4177;
+    font-size   : 15px;
+    font-weight : bold;
+}
+
+.cartOneProduct .itemPrice .old {
+    color           : #999999;
+    font-size       : 14px;
+    font-weight     : bold;
+    text-decoration : line-through;
+}
+
+.cartOneProduct .itemPrice .gain {
+    font-size   : 12px;
+    font-weight : normal;
+    color       : #999999;
+    margin-top  : 8px;
+}
+
+.cartOneProduct .input-sm {
+    text-align : center;
+    font-size  : 12px;
+    padding    : 5px 0 !important;
+}
+
+.cartOneProduct .itemQuantity a {
+    color         : #EF4177;
+    font-size     : 10px;
+    display       : inline-block;
+    margin-top    : 5px;
+    margin-bottom : 0;
+}
+
+.cartOneProduct .itemQuantity a:hover {
+    color : #333333;
+}
+
+.cartOneProduct a.removeProduct {
+    font-size     : 10px;
+    color         : #999999;
+    float         : left;
+    margin-bottom : 0;
+}
+
+.cartOneProduct a.removeProduct:hover {
+    color : #FF0000;
+}
+
+.orderSummaryDetails {
+    border  : 2px solid #f06892;
+    padding : 10px;
+}
+
+.cartPage .col-xs-4 h2.basketColor {
+    background-color : #f06892;
+}
+
+/*.cartPage .col-xs-4 { background-color: #fffcfb}*/
+.orderSummaryDetails .orderArea {
+    padding-bottom : 5px;
+    border-bottom  : 1px dotted #E1E1E1;
+}
+
+.orderSummaryDetails .glyphicon-info-sign, .orderSummaryDetails .glyphicon-ok-circle, .orderSummaryDetails .glyphicon-bookmark, .orderSummaryDetails .glyphicon-th, .orderSummaryDetails .glyphicon-tag {
+    font-size  : 18px;
+    color      : #CCCCCC;
+    margin-top : 2px;
+}
+
+.orderSummaryDetails .priceStrong {
+    font-weight : 700;
+}
+
+.orderSummaryDetails .totalPrice {
+    color : #EF4177;
+}
+
+.orderSummaryDetails .totalPrice span {
+    font-size : 14px;
+}
+
+.orderSummaryDetails .totalPrice strong {
+    font-size : 24px;
+}
+
+.orderSummaryDetails .totalPrice .Buy {
+    font-size   : 16px;
+    font-weight : 600;
+    width       : 200px;
+    margin      : 10px 0;
+}
+
+.orderSummaryDetails .input-xs {
+    height        : 22px;
+    width         : 120px;
+    padding       : 5px;
+    font-size     : 12px;
+    line-height   : 1.5;
+    border-radius : 3px;
+}
+
+.orderSummaryDetails .couponCode, .orderSummaryDetails .shoppingVouchers, .orderSummaryDetails .financingOptions {
+    color : #666666;
+}
+
+.orderSummaryDetails .couponCode .input-group, .orderSummaryDetails .shoppingVouchers a, .orderSummaryDetails .financingOptions a {
+    margin      : 5px 0;
+    font-weight : 600;
+}
+
+.orderSummaryDetails .couponCode .input-group a {
+    font-weight : 600;
+}
+
+.orderSummaryDetails a.cartMiniButton {
+    background-color : #CCCCCC;
+    border           : 1px solid #CCCCCC;
+    border-radius    : 0;
+}
+
+.orderSummaryDetails a.cartMiniButton:hover {
+    background-color : #999999;
+    border           : 1px solid #999999;
+}
+
+.cartProductOptions {
+    margin-top : 30px;
+}
+
+.cartProductOptions .cartBottomProduct {
+    border-bottom : 1px solid #F1F1F1;
+    text-align    : center;
+}
+
+.cartBottomProduct .prImage {
+}
+
+.cartBottomProduct .prName {
+    height : 40px;
+}
+
+.cartBottomProduct .prName a {
+    font-size : 13px;
+    color     : #666666;
+}
+
+.cartBottomProduct .prName a:hover {
+    color : #333333;
+}
+
+.cartBottomProduct .prPrice {
+    font-size   : 16px;
+    font-weight : 600;
+    color       : #333333;
+}
+
+.cartBottomProduct .prButton a {
+    color : #999999;
+}
+
+.checkoutContent .input-lg {
+    border-radius : 6px;
+    font-size     : 18px;
+    height        : 46px;
+    line-height   : 1.33;
+    padding       : 10px 16px;
+}
+
+/* Adet dğeiştirme */
+.productQuantity input {
+    height             : 22px;
+    padding            : 0px 5px;
+    -webkit-box-shadow : inset 0 1px 1px rgba(255, 255, 255, 0.0);
+    box-shadow         : inset 0 1px 1px rgba(255, 255, 255, 0.0);
+    z-index            : -10 !important;
+}
+
+.productQuantity .input-group {
+    width : 85px !important;
+}
+
+.textquantity {
+    font-size    : 15px;
+    font-weight  : 600;
+    color        : #1095E9;
+    padding-top  : 1px;
+    margin-right : 10px;
+}
+
+.orderBasketDetails, .orderBasketDetails {
+    border  : 1px solid #E1E1E1;
+    padding : 10px;
+}
+
+.orderBasketDetails .table {
+    margin-bottom : 0px;
+}
+
+/* Sepetinizdeki Ürünler */
+
+.orderBasketDetails .inBasketPr {
+    width         : 160px;
+    overflow      : hidden;
+    max-width     : 160px;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+}
+
+.checkoutContent .generalCartTitle {
+    font-weight   : 600;
+    font-size     : 16px;
+    color         : #666666;
+    padding       : 0 0 10px 0;
+    border-bottom : 1px solid #E1E1E1;
+}
+
+/* adımlar ödeme */
+.checkoutStep {
+    margin-bottom : 20px;
+}
+
+.checkoutStep li {
+    list-style : none;
+    float      : left;
+}
+
+.checkoutStep li a {
+    display    : block;
+    padding    : 14px 31px;
+    margin-top : 18px;
+}
+
+.checkoutStep span {
+    visibility : hidden;
+}
+
+.checkoutStep1 {
+    background-image : url("../img/checkout-step.png");
+    height           : 64px;
+    width            : 624px;
+    display          : inline-block;
+}
+
+.checkoutStep2 {
+    background : url("../img/checkout-step.png") center;
+    height     : 64px;
+    width      : 624px;
+    display    : inline-block;
+}
+
+.checkoutStep3 {
+    background : url("../img/checkout-step.png") bottom;
+    height     : 64px;
+    width      : 624px;
+    display    : inline-block;
+}
+
+/* ödeme bilgileri */
+
+.orderAdBanner {
+    border-bottom : 2px solid #F5F5F5;
+    border-left   : 2px solid #F5F5F5;
+    border-right  : 2px solid #F5F5F5;
+    padding       : 6px;
+}
+
+.checkoutContent .form-horizontal .form-group {
+    margin-left  : -5px;
+    margin-right : -5px;
+}
+
+.checkoutContent .creditTitle {
+    margin-bottom : 5px;
+    font-weight   : bold;
+    display       : inline-block;
+}
+
+.checkoutContent .formTitle {
+    margin-bottom : 0 !important;
+}
+
+#creditcard table .radio {
+    margin-top    : 0;
+    margin-bottom : 0;
+}
+
+#creditcard table .optionBold {
+    font-weight : bold;
+}
+
+.contractInfo {
+    height   : 150px;
+    width    : 100%;
+    border   : 1px solid #E1E1E1;
+    overflow : auto;
+    padding  : 10px;
+}
+
+/* ödeme ekranındaki düzeltme */
+#creditcard .col-sm-3  {padding-right: 2px!important; }
+
+
+@media only screen and (max-width:991px){
+   .orderBasketDetails .inBasketPr {white-space: normal;}
+ .checkoutStep1 , .checkoutStep2 , .checkoutStep3 {background-size: 100%; width: 479px; height: 48px; /*margin-top: 20px;*/}
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px){
+  .contentPageMblSepet {
+    /*margin-top: 20px;*/
+    clear: both;
+  }
+}
+
+@media only screen and (max-width:767px){
+   .orderSummaryDetailsMbl {margin-top: 20px;}
+   .checkoutStep1  , .checkoutStep2 , .checkoutStep3 {width: 640px; height: 65px;}
+   .noiseBgMbl {
+     margin-bottom: 20px;
+   }
+   .orderSummaryDetails .totalPrice .Buy {
+     width: 100%;
+   }
+}
+
+@media only screen and (max-width:650px){
+   .orderSummaryDetailsMbl {margin-top: 20px;}
+   .checkoutStep1 , .checkoutStep2 , .checkoutStep3 {width: 415px; height: 42px;}
+}
+
+
+@media only screen and (max-width:475px){
+   .orderSummaryDetailsMbl {margin-top: 20px;}
+   .checkoutStep1 , .checkoutStep2 , .checkoutStep3 {width: 310px; height: 31px;}
+}

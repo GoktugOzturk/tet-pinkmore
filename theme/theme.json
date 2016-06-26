@@ -1,0 +1,63 @@
+{
+  "skeletonView": {
+    "default": "global",
+    "checkout": "checkout"
+  },
+  "advertisementZones": {
+    "HomePageSlider": {
+      "description": "Anasayfa Kayan Slider",
+      "group": "Home",
+      "type": "Banner",
+      "width": 1150,
+      "limit": 10,
+      "sort_by": "Order"
+    },
+    "HomePageSquare": {
+      "description": "Anasayfada Slider altında görünen kare bannerlar",
+      "group": "Home",
+      "type": "Banner",
+      "width": 360,
+      "height": 360,
+      "limit": 2,
+      "sort_by": "Order"
+    },
+    "HomePageRectange": {
+      "description": "Anasayfada Slider altındaki dikdörtgen bannerlar",
+      "group": "Home",
+      "type": "Banner",
+      "width": 360,
+      "height": 163,
+      "limit": 2,
+      "sort_by": "Random"
+    },
+    "HomePageBottom": {
+      "description": "Anasayfada alt tarafta görünen bannerlar",
+      "group": "Home",
+      "type": "Banner",
+      "width": 360,
+      "height": 267,
+      "limit": 3,
+      "sort_by": "Random"
+    }
+  },
+  "blockZones": {
+    "footer": {
+      "title": "Footer Alanı",
+      "description": "Bu lan tüm sayfaların altında bulunur"
+    },
+    "homePage": {
+      "title": "Ana Sayfa",
+      "description": "Bu lan tüm sayfaların altında bulunur"
+    }
+  },
+  "productPhoto": {
+    "ratio": 1,
+    "width": {
+      "thumb": 66,
+      "widget": 165,
+      "catalog": 269,
+      "normal": 565,
+      "mail": 300
+    }
+  }
+}

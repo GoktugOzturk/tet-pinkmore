@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="tr">
+<?= view::load("head") ?>
+<body lang="tr">
+<?= view::facebook_sdk() ?>
+<?= view::load("checkout_header") ?>
+<div class="headerMenu"></div>
+<div class="checkoutContainer">
+    <?= view::showMessages('class="messageBox container"') ?>
+    <div id="bodyWrapper" class="container">
+        <? view::show_contents() ?>
+    </div>
+</div>
+<!-- container sonu -->
+<?= view::load("checkout_footer") ?>
+</body>
+</html>

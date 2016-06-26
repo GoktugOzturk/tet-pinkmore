@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+.brandCatTitle {
+    font-weight : 300;
+    font-size   : 25px;
+}
+
+.brandCats {
+    border-bottom : 1px solid #DDDDDD;
+    margin-top    : 10px;
+}
+
+.onCatName {
+    font-weight : 600;
+    font-size   : 14px;
+}
+
+.brandCats li {
+    list-style  : none;
+    margin-left : 10px;
+    line-height : 25px;
+    font-weight : 300;
+}
+
+.brandCats li {
+    list-style  : none;
+    margin-left : 10px;
+    line-height : 25px;
+    font-weight : 300;
+}
+
+.brandTitle h1 {
+    font-size    : 25px;
+    font-weight  : 600;
+    line-height  : 45px;
+    margin-right : 10px;
+}
+
+.scrollbar {
+    max-height    : 200px;
+    overflow      : hidden;
+    border-bottom : none !important;
+}
+
+/* Markalar Listesi */
+.brandWord li {
+    float : left;
+    list-style: none;
+}
+
+.brandWord li a {
+    padding     : 11px;
+    font-size   : 19px;
+    font-weight : 600;
+}
+
+.brandBigWord {
+    font-size   : 90px;
+    font-weight : 300;
+}
+
+.brandShort {
+    border-top : 1px dashed #E1E1E1;
+    margin-top : 20px;
+}
+
+.brandNames {
+    padding-top : 30px;
+}
+
+.brandNames li {
+    float         : left;
+    list-style    : none;
+    margin-right  : 5px;
+    margin-bottom : 2px;
+}
+
+.brandNames li a {
+    display       : inline-block;
+    padding       : 10px;
+    width         : 115px;
+    border        : 1px solid #E1E1E1;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+}
+
+.brandNames li a.special {
+    color  : #f06892;
+    border : 1px solid #f06892;
+}
+
+.brandNames li a:hover {
+    color  : #f06892;
+    border : 1px solid #f06892;
+}
+
+
+
+
+@media only screen and (max-width:767px){
+  .brandNamesMbl ul {width: 600px; display: table; margin: 0px auto; float:none}
+}
+
+@media only screen and (max-width:650px){
+  .brandNamesMbl ul {width: 480px; display: table; margin: 0px auto; float:none}
+}
+
+@media only screen and (max-width:490px){
+  .brandNamesMbl ul {width: 360px; display: table; margin: 0px auto; float:none}
+}
+
+@media only screen and (max-width:370px){
+  .brandNamesMbl ul {width: 240px; display: table; margin: 0px auto; float:none}
+}

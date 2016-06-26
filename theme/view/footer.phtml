@@ -1,0 +1,157 @@
+<div class="clear"></div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="footerMain">
+                <div class="footerTop">
+                    <div class="fGroup col-md-4 col-sm-4 col-xs-12">
+                        <img src="/theme/pinkmore/img/f_ico1.png" alt="Güvenli Ödeme"/>
+                        <span>SSL Desteli ile Güvenli Ödeme</span>
+                    </div>
+                    <div class="fGroup col-md-4 col-sm-4 col-xs-12">
+                        <img src="/theme/pinkmore/img/f_ico2.png" alt="Ücretsiz İade"/>
+                        <span>Ücretsiz İade ve Değişim</span>
+                    </div>
+                    <div class="fGroup col-md-4 col-sm-4 col-xs-12">
+                        <img src="/theme/pinkmore/img/f_ico3.png" alt="Ücretsiz Kargo"/>
+                        <span>50TL Üzeri Ücretsiz Kargo</span>
+                    </div>
+                </div>
+                <!-- footerTop -->
+                <div class="clear"></div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="ulGroup">
+                        <span class="faB">Kurumsal</span>
+                        <div class="clear"></div>
+                        <ul class="footerList">
+                            <li><a href="/hakkimizda">Hakkımızda</a></li>
+                            <li><a href="/iletisim">İletişim</a></li>
+                            <li><a href="https://docs.google.com/forms/d/16wDyMyIpFNLev9O9b27SGeoBLIyFj3YZn-Xz-3YwXKs/viewform" target="_blank">Bayimiz Olun!</a></li>
+                            <li><a href="/uyelik-sozlesmesi" rel="nofollow">Üyelik Sözleşmesi</a></li>
+                        </ul>
+                        <!-- footerList -->
+                    </div>
+                    <!-- ulGroup -->
+                    <div class="ulGroup">
+                        <span class="faB">Satış Sonrası</span>
+                        <div class="clear"></div>
+                        <ul class="footerList">
+                            <li><a href="/cart" rel="nofollow">Sepetim</a></li>
+                            <li><a href="/siparis-takip" rel="nofollow" class="login-required">Sipariş Takip</a></li>
+                            <li><a href="/support/faq" rel="nofollow">Sıkça sorulan Sorular</a></li>
+                            <li><a href="/support/request">Destek</a></li>
+                            <li><a href="/banka-hesap-bilgileri">Banka Hesap Numaraları</a></li>
+                        </ul>
+                        <!-- footerList -->
+                    </div>
+                    <!-- ulGroup -->
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 mblNone">
+                    <div class="ulGroup">
+                        <span class="faB">Sözleşmeler</span>
+                        <div class="clear"></div>
+                        <ul class="footerList">
+                            <li><a href="javascript:;">İptal İade Politikası</a></li>
+                            <li><a href="javascript:;">Mesafeli Satış Sözleşmesi</a></li>
+                            <li><a href="javascript:;">Hizmet Sözleşmesi</a></li>
+                            <li><a href="javascript:;">Gizlilik Sözleşmesi</a></li>
+                        </ul>
+                        <!-- footerList -->
+                    </div>
+                    <!-- ulGroup -->
+                    <div class="ulGroup">
+                        <span class="faB">Yardım Merkezi</span>
+                        <div class="clear"></div>
+                        <ul class="footerList">
+                            <li><a href="javascript:;">Hakkımızda</a></li>
+                            <li><a href="javascript:;">İletişim</a></li>
+                            <li><a href="javascript:;">Bayimiz Olun!</a></li>
+                            <li><a href="javascript:;">Hizmet Sözleşmesi</a></li>
+                        </ul>
+                        <!-- footerList -->
+                    </div>
+                    <!-- ulGroup -->
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-12 mblNone">
+                    <div class="ulGroup">
+                        <span class="faB">Kategoriler</span>
+                        <div class="clear"></div>
+                        <ul class="footerList">
+                            <li><a href="javascript:;">Çatal Bıçak Kaşık</a></li>
+                            <li><a href="javascript:;">Sunum & Sofra</a></li>
+                            <li><a href="javascript:;">Çay Kahve</a></li>
+                            <li><a href="javascript:;">Servis</a></li>
+                            <li><a href="javascript:;">Çanta</a></li>
+                            <li><a href="javascript:;">Kırtasiye</a></li>
+                        </ul>
+                        <!-- footerList -->
+                    </div>
+                    <!-- ulGroup -->
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="ulGroup">
+                        <span class="faB">Bizi Takip Edin!</span>
+                        <div class="clear"></div>
+                        <ul class="footerSocail">
+                            <? $socialData = \TeknoETicaret\Config\Settings::get("social") ?>
+                            <? if ($socialData['facebook']['haspage'] && !empty($socialData['facebook']['pageurl'])) { ?>
+                                <li>
+                                    <a title="Facebook" href="<?= $socialData['facebook']['pageurl'] ?>" target="_blank" rel="nofollow"><img src="/theme/pinkmore/img/facebook.png"
+                                            alt="Facebook"/></a>
+                                </li>
+                            <? } ?>
+                            <? if ($socialData['twitter']['haspage'] && !empty($socialData['twitter']['pageurl'])) { ?>
+                                <li>
+                                    <a title="Twitter" href="<?= $socialData['twitter']['pageurl'] ?>" target="_blank" rel="nofollow"><img src="/theme/pinkmore/img/twitter.png"
+                                            alt="Twitter"/></a>
+                                </li>
+                            <? } ?>
+                            <? if ($socialData['googleplus']['haspage'] && !empty($socialData['googleplus']['pageurl'])) { ?>
+                                <li>
+                                    <a title="Google Plus" href="<?= $socialData['googleplus']['pageurl'] ?>" target="_blank" rel="publisher"><img
+                                            src="/theme/pinkmore/img/facebook.png" alt="Google+"/></a>
+                                </li>
+                            <? } ?>
+                            <? if ($socialData['pinterest']['haspage'] && !empty($socialData['pinterest']['pageurl'])) { ?>
+                                <li>
+                                    <a title="Pinterest" href="<?= $socialData['pinterest']['pageurl'] ?>" target="_blank" rel="nofollow"><img src="/theme/pinkmore/img/p.png"
+                                            alt="Pinterest"/></a>
+                                </li>
+                            <? } ?>
+                            <? if ($socialData['instagram']['haspage'] && !empty($socialData['instagram']['pageurl'])) { ?>
+                                <li>
+                                    <a title="Instagram" href="<?= $socialData['instagram']['pageurl'] ?>" target="_blank" rel="nofollow"><img src="/theme/pinkmore/img/insta.png"
+                                            alt="Instagram"/></a>
+                                </li>
+                            <? } ?>
+                        </ul>
+                        <!-- footerSocail -->
+                        <span class="faB" style="margin-top:15px;">Bültenlerimize Kayıt Olun!</span>
+                        <div class="clear"></div>
+                        <div class="bulten">
+                            <form id="newsletter-form" action="/member/newsletter/" method="post">
+                                <input type="text" name="email" placeholder="mail adresiniz">
+                                <input type="submit" value="HABERDAR ET">
+                                <input type="hidden" name="newsletter-form" value="1"/>
+                            </form>
+                        </div>
+                        <!-- bulten -->
+                    </div>
+                    <!-- ulGroup -->
+                </div>
+            </div>
+            <!-- footerMain -->
+        </div>
+        <p> Copyright PM MAĞAZACILIK A.Ş. © 2016 - Tüm hakları saklıdır. </p>
+        <p class="pull-right">Bu site <a href="http://www.teknomavi.com" target="_blank">Tekno E-Ticaret</a> altyapısı ile hazırlanmıştır.</p>
+    </div>
+    <!-- container -->
+</footer>
+<div class="blockL"></div>
+<?= view::getSemanticData() ?>
+<?= view::load_scripts() ?>
+<?
+if (!defined("DISABLE_TRACKERS")) {
+    echo view::load("tracker/global_tracker");
+}
+?>

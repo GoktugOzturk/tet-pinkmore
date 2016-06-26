@@ -1,0 +1,14 @@
+<?
+/**
+ * @var \advertisement_model[] $links
+ */
+?>
+<? if (count($links)) { ?>
+    <? foreach ($links as $key => $link) { ?>
+        <? if (!empty($link->adv_target)) { ?>
+            <a href="<?= $link->adv_target ?>"><?= $link->adv_text ?></a>
+        <? } else { ?>
+            <a><?= $link->adv_text ?></a>
+        <? } ?>
+    <? } ?>
+<? } ?>

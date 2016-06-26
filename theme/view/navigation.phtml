@@ -1,0 +1,18 @@
+<?
+/**
+ * @var category_model[] $catalogs
+ * @var category_model   $category
+ * @var string           $navigationPills
+ * @var string           $navigationMessage
+ */
+?>
+<nav id="navMenu">
+    <ul class="navMenu">
+        <? if (count($catalogs)) { ?>
+            <? foreach ($catalogs as $catalog) { ?>
+                <li><a href="<?= $catalog['link'] ?>"><?= icms::strtoupper($catalog['name']) ?></a></li>
+            <? } ?>
+        <? } ?>
+    </ul>
+    <a href="/indirimli-urunler" class="discountedProducts">İNDİRİMLİ ÜRÜNLER</a>
+</nav>

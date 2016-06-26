@@ -1,0 +1,18 @@
+<?
+/**
+ * @var int             $id
+ * @var string          $title
+ * @var \product_item[] $products
+ */
+?>
+<div class="carouselContainer <?= $id ?>">
+    <h2><?= $title ?></h2>
+    <div class="clear"></div>
+    <div class="owlCarouselC">
+        <? foreach ($products as $key => $product) { ?>
+            <div class="item">
+                <?= $product->generate() ?>
+            </div>
+        <? } ?>
+    </div>
+</div>

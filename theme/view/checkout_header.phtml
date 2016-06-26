@@ -1,0 +1,15 @@
+<div class="header">
+    <div class="headerTop container">
+        <div class="row">
+            <div class="col-xs-3"><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>" title="Logo"><img src="/img/logo.png" alt="<?= app::getName() ?>"></a></div>
+            <div class="col-xs-9">
+                <div class="row headerSearchCart">
+                    <div class="col-xs-3 col-xs-offset-9" style="margin-top: 12px;">
+                        <a title="Alışveriş Sepetim" class="btn btn-warning btn-md pull-right" id="cartButton" href="<?= app::getUrl(ACTIVE_APP, "http") ?>/cart">
+                            <span class="badge cartItems pull-right"><?= intval(session::getCartProductCount()) ?></span> SEPETİM </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div id="footer">
+    <div class="footerbottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-5"><span class="footervalign"><?= \TeknoETicaret\Config\Settings::get('site.name') ?> &copy; <?= date('Y') ?> - Her hakkı saklıdır.</span></div>
+                <div class="col-xs-7"><img src="/theme/default/img/footer-logo.jpg" width="467" height="29">
+                    <a href="http://www.teknomavi.com" title="Bu sitenin e-ticaret altyapısı TeknoMavi tarafından geliştirilmiştir.">
+                        <img class="pull-right" src="/img/teknomavi-logo.png" alt="TeknoMavi" width="50" height="29"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?= view::load_scripts() ?>
+    <?
+    if (!defined("DISABLE_TRACKERS")) {
+        echo view::load("tracker/global_tracker");
+    }
+    ?>
+</div>
