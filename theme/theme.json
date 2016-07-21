@@ -26,7 +26,7 @@
         "limit": 2,
         "sort_by": "Order"
       },
-      "HomePageRectange": {
+      "HomePageRectangle": {
         "description": "Anasayfada Slider altındaki dikdörtgen bannerlar",
         "group": "Home",
         "type": "Banner",
@@ -47,16 +47,28 @@
     },
     "blockZones": {
       "footer": {
+        "page": "All",
         "title": "Footer Alanı",
-        "description": "Bu lan tüm sayfaların altında bulunur"
+        "description": "Bu alan tüm sayfaların alt kısmında bulunur"
       },
       "homePage": {
+        "page": "Home",
         "title": "Ana Sayfa",
-        "description": "Bu lan tüm sayfaların altında bulunur"
+        "description": "Bu alan sitenin anasayfasında gösterilecek öğelerin görünümü düzenler"
+      },
+      "productPhotoUnder": {
+        "page": "Product",
+        "title": "Ürün Detayı - Resim altı",
+        "description": "Ürün detayında resim alanının altında bulunur"
+      },
+      "productUnder": {
+        "page": "Product",
+        "title": "Ürün Detayı - Alt Alan",
+        "description": "Ürün detayında alt alan"
       }
     },
     "productPhoto": {
-      "ratio": 1,
+      "ratio": 1.2,
       "width": {
         "thumb": 66,
         "widget": 165,

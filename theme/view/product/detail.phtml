@@ -30,9 +30,15 @@
                 </div>
             <? } ?>
         </div>
-        <!-- owl-product -->
-        <?= array_shift($widgets) ?>
-        <!-- carouselContainer -->
+        <?= \TeknoETicaret\Widget\Block::addBlock(
+            'productPhotoUnder',
+            array(
+                'productId' => $obProduct->product_id,
+                'categoryId' => $obProduct->category_id,
+                'brandId' => $obProduct->brand_id,
+            )
+        )
+        ?>
     </div>
     <!-- imgArea -->
     <div class="col-md-6 col-sm-6 col-xs-12 procductFeature">
@@ -167,7 +173,7 @@
         <div class="clear"></div>
         <div class="tab-content">
             <div id="tabDetails" class="tab-pane fade in active">
-                <?= $productDetails ?>
+                <div class="mt"><?= $productDetails ?></div>
                 <table class="table table-bordered table-striped mt">
                     <colgroup>
                         <col class="col-xs-2">
@@ -338,6 +344,11 @@
 </div>
 <!-- procductFeature -->
 <div class="clear"></div>
-<?= implode('<div class="clear"></div>', $widgets) ?>
-<!-- carouselContainer -->
-
+<?= \TeknoETicaret\Widget\Block::addBlock('productUnder',
+    array(
+        'productId' => $obProduct->product_id,
+        'categoryId' => $obProduct->category_id,
+        'brandId' => $obProduct->brand_id,
+    )
+)
+?>
