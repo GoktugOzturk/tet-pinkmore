@@ -87,9 +87,9 @@ $(document).ready(function () {
         $(".owl-product .owl-controls").find(".owl-dots").find(".owl-dot:eq(" + j + ")").append('  <img src="' + data[j] + '" >	');
     }
 // pink more
-    $(window).resize(function () {
-        location.reload();
-    });
+    // $(window).resize(function () {
+    //     location.reload();
+    // });
     $(".hamburgerMenu2").click(function () {
         $("body").addClass("active");
         $(".blockL").addClass("active");
@@ -118,6 +118,10 @@ $(document).ready(function () {
         $("#navMenu").appendTo(".leftMenu");
         $("#headerRight").appendTo(".rightMenu");
         $("#filtreler").appendTo(".katMenu");
+        $(".yBarInput a").click(function () {
+            $(".yBarInput").hide();
+            $(".inputOpen").show();
+        });
     }
     $(".filtreList li a").click(function () {
         $(this).parent().find(".acList").stop().slideToggle(165);
@@ -130,8 +134,5 @@ $(document).ready(function () {
         $(this).hide();
         $(".yBarInput").show();
     });
-    $(".yBarInput a").click(function () {
-        $(".yBarInput").hide();
-        $(".inputOpen").show();
-    });
+
 });

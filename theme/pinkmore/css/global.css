@@ -315,6 +315,23 @@ ul {
     margin-top: 58px;
 }
 
+
+.slider .owl-controls .owl-dot {
+  width: 14px;
+  height: 14px;
+  background: #e1e1e1;
+  float: left;
+  margin-right: 5px;
+  border-radius: 100%;
+  /*border: 1px solid #f16893;*/
+}
+
+.slider .owl-controls .owl-dot.active {
+  background: #f16893;
+  /*border: 1px solid #e1e1e1;*/
+}
+
+
 .widgetSlider .sliderRightArrow {
     background-color: #E1E1E1;
     font-size: 50px;
@@ -354,6 +371,10 @@ ul {
     max-width: 136px;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+#block-homePage {
+  margin-bottom: 30px;
 }
 
 .widgetSlider .col-xs-slider .price {
@@ -976,6 +997,9 @@ div.clear {
 
 @media only screen and (max-width: 767px) {
 
+  .addedImage img {
+    width: 100%;
+  }
     .kateNone {
         display: none;
     }
@@ -2187,7 +2211,10 @@ a:hover, a:focus {
     border-bottom: 1px solid #E1E1E1;
     position: relative;
     padding-bottom: 20px;
+    margin-bottom: 30px;
 }
+
+
 
 .carouselContainer h2, .widgetProductList h2 {
     font-weight: normal;
@@ -2300,7 +2327,7 @@ a:hover, a:focus {
 
 .owlCarouselImgBot .owl-prev span, .owlCarouselImgBot .owl-next span {
     font-size: 15px;
-    margin-top: -12px;
+    margin-top: 6px;
     margin-left: 8px;
     float: left;
 }
