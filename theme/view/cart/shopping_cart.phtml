@@ -59,7 +59,7 @@ $coupon = $cart->getCoupon();
                                     <? if (!empty($obProduct->campaigns['price'])) { ?>
                                         <? foreach ($obProduct->campaigns['price'] as $campaignId => $price) {
                                             $campaign = new campaign_model($campaignId); ?>
-                                            <div><strong class="text-muted block"><?= $campaign->campaign_name ?></strong></div>
+                                            <div><strong class="text-muted"><?= $campaign->campaign_name ?></strong></div>
                                         <? } ?>
                                     <? } ?>
                                     <? if (!empty($obProduct->campaigns['shipment'])) { ?>

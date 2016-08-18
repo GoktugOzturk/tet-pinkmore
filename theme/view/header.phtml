@@ -24,26 +24,26 @@
                     <li class="dropdown"><a role="button" class="dropdown-toggle" href="javascript:" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">Hesabım [<?= mb_strtoupper(session::get("firstName")) ?>] <span class="caret"></span> </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/account/details"><i class="glyphicon glyphicon-user"></i> Kişisel Bilgilerim</a></li>
-                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/account/addresses"><i class="glyphicon glyphicon-list-alt"></i> Adreslerim</a></li>
-                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/account/shopping_checks"><i class="glyphicon glyphicon-tag"></i> Alışveriş Çeklerim</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP) ?>/account/details"><i class="glyphicon glyphicon-user"></i> Kişisel Bilgilerim</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP) ?>/account/addresses"><i class="glyphicon glyphicon-list-alt"></i> Adreslerim</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP) ?>/account/shopping_checks"><i class="glyphicon glyphicon-tag"></i> Alışveriş Çeklerim</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/siparis-takip"><i class="glyphicon glyphicon-ok"></i> Siparişlerim</a></li>
-                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/order/defectreturn"><i class="glyphicon glyphicon-refresh"></i> Arıza/İade Bildirimi</a></li>
-                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/support/tickets"><i class="glyphicon glyphicon-comment"></i> Destek Taleplerim</a></li>
-                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/support/request"><i class="glyphicon glyphicon-plus-sign"></i> Yeni Talep Oluştur</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP) ?>/siparis-takip"><i class="glyphicon glyphicon-ok"></i> Siparişlerim</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP) ?>/order/defectreturn"><i class="glyphicon glyphicon-refresh"></i> Arıza/İade Bildirimi</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP) ?>/support/tickets"><i class="glyphicon glyphicon-comment"></i> Destek Taleplerim</a></li>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP) ?>/support/request"><i class="glyphicon glyphicon-plus-sign"></i> Yeni Talep Oluştur</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="<?= app::getUrl(ACTIVE_APP, "http") ?>/member/logout"><i class="glyphicon glyphicon-send"></i> Çıkış Yap</a>
+                            <li><a href="<?= app::getUrl(ACTIVE_APP) ?>/member/logout"><i class="glyphicon glyphicon-send"></i> Çıkış Yap</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a role="button" href="<?= app::getUrl(ACTIVE_APP, "http") ?>/siparis-takip">SİPARİŞ TAKİP</a></li>
-                    <li><a role="button" href="<?= app::getUrl(ACTIVE_APP, "http") ?>/iletisim">İLETİŞİM</a></li>
+                    <li><a role="button" href="<?= app::getUrl(ACTIVE_APP) ?>/siparis-takip">SİPARİŞ TAKİP</a></li>
+                    <li><a role="button" href="<?= app::getUrl(ACTIVE_APP) ?>/iletisim">İLETİŞİM</a></li>
                 <? } else { ?>
                     <li><a role="button" class="signup-required" href="javascript:">ÜYE OL</a></li>
                     <li><a role="button" class="login-required" href="javascript:">GİRİŞ YAP</a></li>
-                    <li><a role="button" class="login-required" href="<?= app::getUrl(ACTIVE_APP, "http") ?>/siparis-takip">SİPARİŞ TAKİP</a></li>
-                    <li><a role="button" href="<?= app::getUrl(ACTIVE_APP, "http") ?>/iletisim">İLETİŞİM</a></li>
+                    <li><a role="button" class="login-required" href="<?= app::getUrl(ACTIVE_APP) ?>/siparis-takip">SİPARİŞ TAKİP</a></li>
+                    <li><a role="button" href="<?= app::getUrl(ACTIVE_APP) ?>/iletisim">İLETİŞİM</a></li>
                 <? } ?>
             </ul>
             <!-- #headerRight -->
@@ -77,7 +77,7 @@
         </div>
         <!-- headerRight -->
     </div>
-    <a href="<?= app::getUrl(ACTIVE_APP, "http") ?>" class="logo"><img src="<?= $themeDir ?>/img/logo.png" alt="logo"/></a>
+    <a href="<?= app::getUrl(ACTIVE_APP) ?>" class="logo"><img src="<?= $themeDir ?>/img/logo.png" alt="logo"/></a>
     <div class="clear"></div>
     <div class="container">
         <?= menu::generateSiteHeaderMenu() ?>

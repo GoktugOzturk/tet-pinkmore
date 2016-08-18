@@ -21,8 +21,8 @@
         "description": "Anasayfada Slider altında görünen kare bannerlar",
         "group": "Home",
         "type": "Banner",
-        "width": 360,
-        "height": 360,
+        "width": 370,
+        "height": 370,
         "limit": 2,
         "sort_by": "Order"
       },
@@ -30,8 +30,8 @@
         "description": "Anasayfada Slider altındaki dikdörtgen bannerlar",
         "group": "Home",
         "type": "Banner",
-        "width": 360,
-        "height": 163,
+        "width": 370,
+        "height": 175,
         "limit": 2,
         "sort_by": "Random"
       },
@@ -39,8 +39,8 @@
         "description": "Anasayfada alt tarafta görünen bannerlar",
         "group": "Home",
         "type": "Banner",
-        "width": 360,
-        "height": 267,
+        "width": 370,
+        "height": 265,
         "limit": 3,
         "sort_by": "Random"
       }
