@@ -315,22 +315,20 @@ ul {
     margin-top: 58px;
 }
 
-
 .slider .owl-controls .owl-dot {
-  width: 14px;
-  height: 14px;
-  background: #e1e1e1;
-  float: left;
-  margin-right: 5px;
-  border-radius: 100%;
-  /*border: 1px solid #f16893;*/
+    width: 14px;
+    height: 14px;
+    background: #E1E1E1;
+    float: left;
+    margin-right: 5px;
+    border-radius: 100%;
+    /*border: 1px solid #f16893;*/
 }
 
 .slider .owl-controls .owl-dot.active {
-  background: #f16893;
-  /*border: 1px solid #e1e1e1;*/
+    background: #F16893;
+    /*border: 1px solid #e1e1e1;*/
 }
-
 
 .widgetSlider .sliderRightArrow {
     background-color: #E1E1E1;
@@ -374,7 +372,7 @@ ul {
 }
 
 #block-homePage {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .widgetSlider .col-xs-slider .price {
@@ -997,9 +995,10 @@ div.clear {
 
 @media only screen and (max-width: 767px) {
 
-  .addedImage img {
-    width: 100%;
-  }
+    .addedImage img {
+        width: 100%;
+    }
+
     .kateNone {
         display: none;
     }
@@ -2214,8 +2213,6 @@ a:hover, a:focus {
     margin-bottom: 30px;
 }
 
-
-
 .carouselContainer h2, .widgetProductList h2 {
     font-weight: normal;
     margin: 0;
@@ -2283,7 +2280,6 @@ a:hover, a:focus {
     color: #53667B;
     font-family: 'ProximaNova-Bold';
 }
-
 
 .owlCarouselC .owl-controls .owl-dots {
     position: absolute;

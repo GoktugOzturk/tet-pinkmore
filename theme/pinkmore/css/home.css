@@ -1,28 +1,25 @@
 @charset "UTF-8";
 
-
-
-
-
-@media only screen and (max-width:1199px){
-
-}
-@media only screen and (max-width:991px){
-
+@media only screen and (max-width: 1199px) {
 
 }
 
-@media only screen and (max-width:767px){
+@media only screen and (max-width: 991px) {
 
 }
 
-@media only screen and (min-width:1200px){
+@media only screen and (max-width: 767px) {
 
 }
 
-@media only screen and (min-width:992px) and (max-width:1199px){
+@media only screen and (min-width: 1200px) {
 
 }
 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
 
-/**/
+}
+
+.verticalBanners div:first-child {
+    margin-bottom: 20px;
+}
