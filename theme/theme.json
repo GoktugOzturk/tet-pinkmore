@@ -59,6 +59,23 @@
         "width": 560,
         "limit": 2,
         "sort_by": "Order"
+      },
+      "EmailBig": {
+        "description": "Gönderilen e-postalardaki büyük banner",
+        "group": "Email",
+        "type": "Banner",
+        "width": 600,
+        "limit": 1,
+        "sort_by": "Order"
+      },
+      "EmailSmall": {
+        "description": "Gönderilen e-postalardaki küçük bannerlar",
+        "group": "Email",
+        "type": "Banner",
+        "width": 293,
+        "height": 220,
+        "limit": 2,
+        "sort_by": "Order"
       }
     },
     "blockZones": {
