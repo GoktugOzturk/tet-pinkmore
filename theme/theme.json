@@ -65,6 +65,31 @@
         "page": "Product",
         "title": "Ürün Detayı - Alt Alan",
         "description": "Ürün detayında alt alan"
+      },
+	  "categoryTop": {
+        "page": "Category",
+        "title": "Kategori Sayfası Navigasyon Altı",
+        "description": "Kategori sayfalarında navigasyon altına eklenecek banner, açıklama gibi öğelerin özelleştirilmesini sağlar"
+      },
+	  "categoryBottom": {
+        "page": "Category",
+        "title": "Kategori Sayfası Footer Üstü",
+        "description": "Kategori sayfalarında ürün listesi ile footer arasında görünür."
+      },
+	  "categorySidebar": {
+        "page": "Category",
+        "title": "Kategori Sayfası Filtre Altı",
+        "description": "Kategori sayfalarında filtre altına eklenecek banner, açıklama gibi öğelerin özelleştirilmesini sağlar"
+      },
+	  "cartTop": {
+        "page": "Cart",
+        "title": "Sepet Üstü",
+        "description": "Sepette, ürünlerin ve sipariş özetinin üzerinde görünür."
+      },
+	  "cartBottom": {
+        "page": "Cart",
+        "title": "Sepet Altı",
+        "description": "Sepette, ürünlerin ve sipariş özetinin altında görünür."
       }
     },
     "productPhoto": {

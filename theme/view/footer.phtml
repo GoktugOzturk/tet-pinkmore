@@ -1,46 +1,36 @@
 <div class="clear"></div>
 <footer>
     <div class="container">
-        <div class="row">
-            <div class="footerMain">
-                <div class="footerTop">
-                    <div class="fGroup col-md-4 col-sm-4 col-xs-12">
-                        <img src="/theme/pinkmore/img/f_ico1.png" alt="Güvenli Ödeme"/>
-                        <span>SSL Desteği ile Güvenli Ödeme</span>
-                    </div>
-                    <div class="fGroup col-md-4 col-sm-4 col-xs-12">
-                        <img src="/theme/pinkmore/img/f_ico2.png" alt="Ücretsiz İade"/>
-                        <span>Ücretsiz İade ve Değişim</span>
-                    </div>
-                    <div class="fGroup col-md-4 col-sm-4 col-xs-12">
-                        <img src="/theme/pinkmore/img/f_ico3.png" alt="Ücretsiz Kargo"/>
-                        <span>50TL Üzeri Ücretsiz Kargo</span>
-                    </div>
+        <div class="footerMain">
+            <div class="footerTop row">
+                <div class="fGroup col-md-4 col-sm-4 col-xs-12">
+                    <img src="/theme/pinkmore/img/f_ico1.png" alt="Güvenli Ödeme"/>
+                    <span>SSL ile Güvenli Ödeme</span>
                 </div>
-                <!-- footerTop -->
-                <div class="clear"></div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <?= \TeknoETicaret\Widget\Block::addBlock('footer') ?>
-                    </div>
+                <div class="fGroup col-md-4 col-sm-4 col-xs-12">
+                    <img src="/theme/pinkmore/img/f_ico2.png" alt="Ücretsiz İade"/>
+                    <span>Ücretsiz İade ve Değişim</span>
+                </div>
+                <div class="fGroup col-md-4 col-sm-4 col-xs-12">
+                    <img src="/theme/pinkmore/img/f_ico3.png" alt="Ücretsiz Kargo"/>
+                    <span>50TL Üzeri Ücretsiz Kargo</span>
                 </div>
             </div>
-            <!-- footerMain -->
+            <!-- footerTop -->
+            <div class="clear"></div>
+            <div class="footerMenus">
+                <?= \TeknoETicaret\Widget\Block::addBlock('footer') ?>
+            </div>
         </div>
+        <!-- footerMain -->
         <p> Copyright PM MAĞAZACILIK A.Ş. © 2016 - Tüm hakları saklıdır. </p>
-        <ul class="paymentOptions">
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-        </ul>
+        <div class="paymentOptions"></div>
     </div>
     <!-- container -->
 </footer>
 <div class="blockL"></div>
-<p style="text-align:center;font-size:12px;color:#666">
-    Bu site <a href="http://www.teknomavi.com" target="_blank"><strong>Tekno E-Ticaret</strong></a> altyapısı ile hizmet veriyor.
+<p style="text-align:center;font-size:12px;color:#666;margin-top:3px">
+    Bu site <a href="https://www.teknoeticaret.com" target="_blank"><strong>Tekno E-Ticaret</strong></a> altyapısı ile hizmet veriyor.
 </p>
 <?= view::getSemanticData() ?>
 <?= view::load_scripts() ?>

@@ -5,9 +5,10 @@
 ?>
 <header>
     <div class="container">
-        <a href="javascript:;" class="hamburgerMenu2">
-            <img src="<?= $themeDir ?>/img/hamburgerMenu.png" alt="Menü" class="hamburgerMenu"/>
-            <span class="hamburgerMenuText">KATEGORİ</span>
+        <a href="<?= app::getUrl(ACTIVE_APP) ?>" class="logo"><img src="<?= $themeDir ?>/img/logo.png" alt="logo"/></a>
+        <a href="javascript:;" class="hamburgerMenu">
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+            <div>MENÜ</div>
         </a>
         <div class="headerLeft">
             <ul id="headerLeft">
@@ -57,12 +58,12 @@
                     <div class="yBarInput">
                         <form id="search" action="/ara">
                             <input type="text" name="q" id="searchQuery" placeholder="ürün ara..">
-                            <a href="javascript:;"><span class="glyphicon glyphicon-search"></span></a>
+                            <a class="yBarSearchButton" href="javascript:;" onclick="$('form#search').submit()"><span class="glyphicon glyphicon-search"></span></a>
                         </form>
                     </div>
                 </li>
-                <li>
-                    <a href="/account" class="userHeader">
+                <li class="userHeaderContainer">
+                    <a class="userHeader">
                         <span class="glyphicon glyphicon-user"></span>
                         <div>HESABIM</div>
                     </a>
@@ -77,9 +78,8 @@
         </div>
         <!-- headerRight -->
     </div>
-    <a href="<?= app::getUrl(ACTIVE_APP) ?>" class="logo"><img src="<?= $themeDir ?>/img/logo.png" alt="logo"/></a>
     <div class="clear"></div>
-    <div class="container">
+    <div id="navigationContainer" class="container">
         <?= menu::generateSiteHeaderMenu() ?>
         <div class="clear"></div>
         <div class="bar">

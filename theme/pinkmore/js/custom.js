@@ -90,7 +90,7 @@ $(document).ready(function () {
     // $(window).resize(function () {
     //     location.reload();
     // });
-    $(".hamburgerMenu2").click(function () {
+    $(".hamburgerMenu").click(function () {
         $("body").addClass("active");
         $(".blockL").addClass("active");
         $(".leftMenu").addClass("active");

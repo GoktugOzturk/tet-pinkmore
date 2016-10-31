@@ -20,6 +20,10 @@
 
 }
 
-.verticalBanners div:first-child {
+#homePageTopBanners {
+    margin-top: 40px;
+}
+
+.verticalBanners img.first-child {
     margin-bottom: 20px;
 }

@@ -1,9 +1,4 @@
 @charset "UTF-8";
-/*
-Proje: Bilişim Port V1
-CSS Yazar - UI Tasarım: Mustafa BAL
-Portfolyo: http://www.mustafabal.co
-*/
 
 input, textarea {
     outline: none;
@@ -266,7 +261,7 @@ ul {
 
 /* Menülü Alan */
 .headerMenu {
-    background-color: #1095E9;
+    background-color: #D3F3FA;
     margin-top: 10px;
     padding: 8px;
     color: #FFF;
@@ -315,21 +310,6 @@ ul {
     margin-top: 58px;
 }
 
-.slider .owl-controls .owl-dot {
-    width: 14px;
-    height: 14px;
-    background: #E1E1E1;
-    float: left;
-    margin-right: 5px;
-    border-radius: 100%;
-    /*border: 1px solid #f16893;*/
-}
-
-.slider .owl-controls .owl-dot.active {
-    background: #F16893;
-    /*border: 1px solid #e1e1e1;*/
-}
-
 .widgetSlider .sliderRightArrow {
     background-color: #E1E1E1;
     font-size: 50px;
@@ -373,6 +353,15 @@ ul {
 
 #block-homePage {
     margin-bottom: 30px;
+}
+
+.oldPrice {
+    float: left;
+    margin-left: 15px;
+    color: #A9A9A9;
+    font-size: 14px;
+    text-decoration: line-through;
+    margin-top: 4px;
 }
 
 .widgetSlider .col-xs-slider .price {
@@ -495,6 +484,10 @@ ul {
 
 /* içerik sayfası */
 
+.contentPage {
+    margin-top: 30px;
+}
+
 .contentPage p {
     font-size: 14px;
     margin-bottom: 12px;
@@ -570,31 +563,90 @@ ul {
 
 /* Bootstrap Düzeltmeleri */
 
-.btn-warning {
+.btn-primary {
     background-color: #EF4177;
     border-color: #EF4177;
+    color: #FFF !important;
 }
 
 .btn {
     border-radius: 24px;
 }
 
-.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-warning {
-    background-color: #EF4177;
-    border-color: #EF4177;
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    background-color: #FA4278;
+    border-color: #FA4278;
 }
 
-.btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-warning {
-    background-image: none;
+.btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.focus:active, .btn-primary:active:focus, .btn-primary:active:hover, .open > .dropdown-toggle.btn-primary.focus, .open > .dropdown-toggle.btn-primary:focus, .open > .dropdown-toggle.btn-primary:hover {
+    background-color: #D63F6B;
+    border-color: #D63F6B;
 }
 
-.btn-warning.disabled, .btn-warning[disabled], fieldset[disabled] .btn-warning, .btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn-warning:hover, .btn-warning.disabled:focus, .btn-warning[disabled]:focus, fieldset[disabled] .btn-warning:focus, .btn-warning.disabled:active, .btn-warning[disabled]:active, fieldset[disabled] .btn-warning:active, .btn-warning.disabled.active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning.active {
+.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
     background-color: #FF95C0;
     border-color: #FF95C0;
 }
 
-.btn-warning .badge {
+.btn-primary .badge {
     color: #FF95C0;
+}
+
+/* File Upload */
+.btn-file {
+    border: 1px solid #CCC;
+}
+
+.btn-file input[type="file"] {
+    cursor: inherit;
+    display: block;
+    font-size: 100px;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+
+.buttonFacebook {
+    background-color: #4267B2;
+    border-color: #4267B2;
+    color: #FFF !important;
+}
+
+.buttonFacebook:hover,
+.buttonFacebook:active,
+.buttonFacebook:focus {
+    background-color: #25428E !important;
+    border-color: #25428E !important;
+}
+
+.buttonTwitter {
+    background-color: #1DA1F2;
+    border-color: #1DA1F2;
+    color: #FFF !important;
+}
+
+.buttonTwitter:hover,
+.buttonTwitter:active,
+.buttonTwitter:focus {
+    background-color: #156FA8 !important;
+    border-color: #156FA8 !important;
+}
+
+.buttonGooglePlus {
+    background-color: #D73D32;
+    border-color: #D73D32;
+    color: #FFF !important;
+}
+
+.buttonGooglePlus:hover,
+.buttonGooglePlus:active,
+.buttonGooglePlus:focus {
+    background-color: #A12C23 !important;
+    border-color: #A12C23 !important;
 }
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
@@ -787,9 +839,21 @@ div.clear {
     display: none
 }
 
+#fullInstallmentTable .CardFamily {
+    padding: 0 !important;
+}
+
+#fullInstallmentTable .CardFamily img {
+    width: 100%;
+}
+
+#fullInstallmentTable th, #fullInstallmentTable td {
+    font-size: 14px;
+}
+
 .owl-product img {
-    width: 462px;
-    height: 462px;
+    /*    width: 462px;
+        height: 462px;*/
 }
 
 .owl-dot img {
@@ -806,6 +870,20 @@ div.clear {
 
 .owl-product .owl-dots {
     margin-top: 20px;
+}
+
+.logo {
+    width: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 100%
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -867,11 +945,6 @@ div.clear {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .logo {
-        width: auto;
-        margin-top: 10px;
-    }
-
     .headerMenu {
         margin-bottom: 20px;
     }
@@ -891,10 +964,6 @@ div.clear {
         max-width: 750px !important;
         width: 750px !important;
         padding: 0 10px;
-    }
-
-    .logo img {
-        width: 100%
     }
 
     .tmk {
@@ -1340,18 +1409,6 @@ div.clear {
 
     .sliderMbl {
         margin-bottom: 0;
-    }
-
-    .logo img {
-        width: 155px;
-        display: table;
-        margin: 0 auto;
-    }
-
-    .logo {
-        float: left;
-        margin-top: -5px;
-        padding: 0;
     }
 
     .mblMenu {
@@ -1934,12 +1991,6 @@ a:hover, a:focus {
     line-height: 30px;
 }
 
-.logo {
-    width: 150px;
-    display: block;;
-    margin: -91px auto 0;
-}
-
 .headerRight {
     float: right;
     margin-top: 10px;
@@ -1949,18 +2000,24 @@ a:hover, a:focus {
     float: right;
 }
 
-#headerRight li {
+#headerRight > li {
     float: left;
     margin-left: 16px;
 }
 
-#headerRight li span {
+#headerRight > li > span {
     float: left;
     margin: -3px 5px 0;
 }
 
-#headerRight li a {
+#headerRight > li > a {
     float: left;
+    color: #53667B;
+    font-size: 12px;
+    font-family: 'ProximaNova-Sbold';
+}
+
+#headerRight .dropdown-menu a {
     color: #53667B;
     font-size: 12px;
     font-family: 'ProximaNova-Sbold';
@@ -1970,27 +2027,27 @@ a:hover, a:focus {
     float: right;
 }
 
-.yBar li {
+.yBar > li {
     float: left;
     margin-left: 45px;
 }
 
-.yBar li:first-child a {
+.yBar > li:first-child > a {
     display: none;
 }
 
-.yBar li a {
+.yBar > li > a {
     float: left;
 }
 
-.yBar li a span {
+.yBar > li > a > span {
     display: table;
     margin: 0 auto;
     font-size: 20px;
     color: #53667B;
 }
 
-.yBar li a div {
+.yBar > li > a > div {
     width: 100%;
     float: left;
     font-size: 12px;
@@ -1999,7 +2056,7 @@ a:hover, a:focus {
     font-family: 'ProximaNova-Sbold';
 }
 
-.yBar li:hover a span, .yBar li:hover a div {
+.yBar > li:hover > a > span, .yBarSearchButton:hover > span .yBar > li:hover > a > div {
     color: #F06892;
 }
 
@@ -2018,21 +2075,28 @@ a:hover, a:focus {
     border: 2px solid #F06892;
 }
 
-.yBarInput a {
+.yBarInput .dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
+    background: #F06892;
+    color: #FFF;
+}
+
+.yBarSearchButton {
     height: 30px;
     width: 30px;
     background: #F06892;
     color: #FFF;
     display: block !important;
+    float: left;
 }
 
-.yBarInput a span {
+.yBarSearchButton span {
     color: #FFF !important;
     font-size: 17px !important;
-    margin-top: 5px !important;
+    margin: 5px auto 0 !important;
+    display: table;
 }
 
-.yBarInput a img {
+.yBarSearchButton img {
     width: 20px;
     display: table;
     margin: 5px auto 0;
@@ -2056,6 +2120,10 @@ a:hover, a:focus {
 .yBarInput input:-ms-input-placeholder {
     color: #999;
     font-family: 'ProximaNova-Regular';
+}
+
+#navigationContainer {
+    margin-bottom: 30px;
 }
 
 #navMenu {
@@ -2097,40 +2165,11 @@ a:hover, a:focus {
 .paymentOptions {
     float: right;
     margin-top: 26px;
-}
-
-.paymentOptions li {
-    float: left;
-    margin-left: 7px;
-}
-
-.paymentOptions li a {
-    width: 55px;
+    width: 300px;
     height: 30px;
     overflow: hidden;
-    float: left;
     background: url(../img/paymentOptions.png) no-repeat;
     background-size: 300px 30px;
-}
-
-.paymentOptions li:nth-child(1) a {
-    background-position: 0;
-}
-
-.paymentOptions li:nth-child(2) a {
-    background-position: -60px;
-}
-
-.paymentOptions li:nth-child(3) a {
-    background-position: -119px;
-}
-
-.paymentOptions li:nth-child(4) a {
-    background-position: -180px;
-}
-
-.paymentOptions li:nth-child(5) a {
-    background-position: -240px;
 }
 
 .navMenu li:hover a {
@@ -2140,7 +2179,7 @@ a:hover, a:focus {
 .discountedProducts {
     font-family: 'ProximaNova-Bold';
     font-size: 15px;
-    color: #F06892;
+    color: #F06892 !important;
     float: right;
     margin-right: 13px;
 }
@@ -2177,7 +2216,6 @@ a:hover, a:focus {
 }
 
 .slider {
-    margin-top: 25px;
     margin-bottom: 20px;
     width: 100%;
     float: left;
@@ -2185,7 +2223,12 @@ a:hover, a:focus {
 
 .slider .owl-controls {
     display: table;
-    margin: 15px auto 0;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    width: 95px;
 }
 
 .slider .owl-controls .owl-dot {
@@ -2195,7 +2238,7 @@ a:hover, a:focus {
     float: left;
     margin-right: 5px;
     border-radius: 100%;
-    /*border: 1px solid #f16893;*/
+    border: 1px solid #f16893;
 }
 
 .slider .owl-controls .owl-dot.active {
@@ -2255,8 +2298,8 @@ a:hover, a:focus {
 }
 
 .owlCarouselImgBot .item img {
-    width: 165px;
-    height: 165px;
+    width: 100%;
+    height: auto;
     background: #F1F1F1;
 }
 
@@ -2271,14 +2314,18 @@ a:hover, a:focus {
     line-height: 15px;
 }
 
-.owlCarouselImgBot .item span {
-    width: 100%;
+.owlCarouselImgBot .item .price {
     float: left;
     margin-top: 10px;
     overflow: hidden;
     font-size: 18px;
     color: #53667B;
     font-family: 'ProximaNova-Bold';
+}
+
+.owlCarouselImgBot .item .oldPrice {
+    margin-top: 14px;
+    font-weight: normal;
 }
 
 .owlCarouselC .owl-controls .owl-dots {
@@ -2299,7 +2346,6 @@ a:hover, a:focus {
 .owlCarouselC .owl-prev span, .owlCarouselC .owl-next span {
     color: #FFF;
     font-size: 25px;
-    color: #FFF;
     display: block;
     text-align: center;
 }
@@ -2326,16 +2372,6 @@ a:hover, a:focus {
     margin-top: 6px;
     margin-left: 8px;
     float: left;
-}
-
-.owlCarouselImgBot .owl-prev {
-    left: -94px;
-    position: absolute;
-}
-
-.owlCarouselImgBot .owl-next {
-    right: -94px;
-    position: absolute;
 }
 
 .owlCarouselC .owl-controls .owl-dots .owl-dot {
@@ -2373,16 +2409,14 @@ a:hover, a:focus {
 
 .owlCarouselImgBot .owl-prev {
     left: 0;
+    top: 10px;
     position: absolute;
 }
 
 .owlCarouselImgBot .owl-next {
     right: 0;
+    top: 10px;
     position: absolute;
-}
-
-.bannersBot {
-    margin-top: 30px;
 }
 
 .star {
@@ -2429,8 +2463,7 @@ footer {
     margin-top: 10px;
 }
 
-.faB {
-    float: left;
+.faB, .footerMenus h3 {
     font-size: 20px;
     color: #53667B;
     font-family: 'ProximaNova-Sbold';
@@ -2442,9 +2475,12 @@ footer {
     /*white-space: nowrap;*/
 }
 
+#block-footer {
+    margin-bottom: 15px;
+}
+
 .footerList {
     float: left;
-    margin: 15px 0 0;
 }
 
 .footerList li {
@@ -2461,7 +2497,6 @@ footer {
 }
 
 .ulGroup {
-    margin-bottom: 15px;
     float: left;
 }
 
@@ -2525,7 +2560,7 @@ footer p {
     margin-right: 15px;
 }
 
-.hamburgerMenu2 {
+.hamburgerMenu {
     display: none;
 }
 
@@ -2559,6 +2594,7 @@ footer p {
 
 /* Breadcrumbs */
 .breadcrumbs {
+    margin-top: -15px;
 }
 
 .breadcrumbs > div {
@@ -2569,9 +2605,14 @@ footer p {
     list-style: outside none lower-alpha;
 }
 
+.userHeaderContainer {
+    display: none;
+}
+
 @media only screen and (max-width: 1199px) {
     .banners img, .bannersBot img {
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .owlCarouselC .owl-next {
@@ -2629,6 +2670,10 @@ footer p {
         position: fixed;
         z-index: 999;
         background: #FFF;
+    }
+
+    .logo {
+        width: 100px;
     }
 
     .leftMenu {
@@ -2700,6 +2745,14 @@ footer p {
         width: 120px;
     }
 
+    .yBarInput .typeahead.dropdown-menu {
+        display: none !important;
+    }
+
+    .userHeaderContainer {
+        display: block;
+    }
+
     #headerRight {
         /*display: none;*/
         margin-top: 15px;
@@ -2725,14 +2778,33 @@ footer p {
     }
 
     .hamburgerMenu {
+        margin-top: 16px;
+        padding: 0 6px;
         display: block;
-        margin-top: 23px;
         float: left;
-        margin-left: 12px;
-        margin-bottom: 5px;
     }
 
-    .hamburgerMenuText {
+    .hamburgerMenu span {
+        display: table;
+        margin: 0 auto;
+        font-size: 20px;
+        color: #53667B;
+    }
+
+    .hamburgerMenu div {
+        width: 100%;
+        float: left;
+        font-size: 12px;
+        margin-top: 4px;
+        color: #53667B;
+        font-family: 'ProximaNova-Sbold';
+    }
+
+    .hamburgerMenu:hover span, .hamburgerMenu:hover div {
+        color: #F06892;
+    }
+
+    .hamburgerMenu div {
         font-size: 12px;
         color: #53667B;
         font-family: 'ProximaNova-Sbold';
@@ -2776,16 +2848,6 @@ footer p {
         float: left;
         margin-left: 15px;
         margin-right: 0;
-    }
-
-    .hamburgerMenu2 {
-        display: block;
-        float: left;
-    }
-
-    .logo {
-        width: 95px;
-        margin-top: -62px;
     }
 
     .headerRight {
@@ -2841,27 +2903,12 @@ footer p {
 }
 
 @media only screen and (max-width: 767px) {
-    .hamburgerMenuText {
-        display: none;
-    }
-
     header {
         height: 65px;
     }
 
     .headerFix {
-        height: 65px;
-    }
-
-    .logo {
-        width: 95px;
-        display: block;
-        float: none;
-        margin: -48px auto 0;
-    }
-
-    .logo img {
-        width: 100%;
+        height: 75px;
     }
 
     .yBar li a div {
@@ -2908,10 +2955,6 @@ footer p {
 
     .headerRight {
         margin-top: 23px;
-    }
-
-    .banners, .bannersBot {
-        margin-bottom: 20px;
     }
 
     .bannersNone {
@@ -2995,7 +3038,7 @@ footer p {
         top: 47px;
     }
 
-    .fGroup {
+    .footerTop, .fGroup {
         display: none;
     }
 
@@ -3106,14 +3149,6 @@ footer p {
     font-family: 'ProximaNova-Sbold';
     border: none;
     color: #FFF;
-}
-
-#homePageTopBanners {
-    margin-top: 40px;
-}
-
-#homePageTopBanners #verticalBanners .col-md-12:first-child {
-    margin-bottom: 34px;
 }
 
 .carouselContainer .productItem .productName {

@@ -19,7 +19,7 @@
 
 .cartOneProduct {
     border-bottom: 1px solid #E1E1E1;
-    padding-bottom : 10px;
+    padding-bottom: 10px;
 }
 
 .cartOneProduct:last-child {
@@ -44,26 +44,26 @@
 }
 
 .cartOneProduct a:hover {
-    color : #EF4177;
+    color: #EF4177;
 }
 
 .cartOneProduct .itemPrice .pr {
-    color       : #EF4177;
+    color: #EF4177;
     font-size: 15px;
     font-weight: bold;
 }
 
 .cartOneProduct .itemPrice .old {
-    color           : #999999;
-    font-size       : 14px;
-    font-weight     : bold;
+    color: #999;
+    font-size: 14px;
+    font-weight: bold;
     text-decoration: line-through;
 }
 
 .cartOneProduct .itemPrice .gain {
     font-size: 12px;
     font-weight: normal;
-    color       : #999999;
+    color: #999;
     margin-top: 8px;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .cartOneProduct .itemQuantity a {
-    color         : #EF4177;
+    color: #EF4177;
     font-size: 10px;
     display: inline-block;
     margin-top: 5px;
@@ -82,32 +82,34 @@
 }
 
 .cartOneProduct .itemQuantity a:hover {
-    color : #333333;
+    color: #333;
 }
 
 .cartOneProduct a.removeProduct {
     font-size: 10px;
-    color         : #999999;
+    color: #999;
     float: left;
     margin-bottom: 0;
 }
 
 .cartOneProduct a.removeProduct:hover {
-    color : #FF0000;
+    color: #F00;
 }
 
 .orderSummaryDetails {
-    border  : 2px solid #f06892;
+    border: 2px solid #F06892;
+    background: #FFF;
     padding: 10px;
 }
 
 .cartPage .col-xs-4 h2.basketColor {
-    background-color : #f06892;
+    background-color: #F06892;
 }
 
 /*.cartPage .col-xs-4 { background-color: #fffcfb}*/
 .orderSummaryDetails .orderArea {
     padding-bottom: 5px;
+    margin-bottom: 5px;
     border-bottom: 1px dotted #E1E1E1;
 }
 
@@ -122,7 +124,7 @@
 
 .orderSummaryDetails .glyphicon-info-sign, .orderSummaryDetails .glyphicon-ok-circle, .orderSummaryDetails .glyphicon-bookmark, .orderSummaryDetails .glyphicon-th, .orderSummaryDetails .glyphicon-tag {
     font-size: 18px;
-    color      : #CCCCCC;
+    color: #CCC;
     margin-top: 2px;
 }
 
@@ -131,7 +133,7 @@
 }
 
 .orderSummaryDetails .totalPrice {
-    color: #ef4177;
+    color: #EF4177;
 }
 
 .orderSummaryDetails .totalPrice span {
@@ -279,9 +281,20 @@
     max-width: 200px;
 }
 
+@media all and (max-width: 768px) {
+    .orderCartDetails .inCartPr {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        width: auto;
+        max-width: inherit;
+    }
+}
+
 .checkoutContainer {
     background: #EEE;
     min-height: 600px;
+    padding-top: 20px;
 }
 
 .checkoutContainer .alert {
@@ -306,9 +319,27 @@
     margin: 50px auto;
 }
 
+.checkoutAccountBox .seperator {
+    display: none;
+}
+
 /* Checkout Adımlar: Adres Seçimi */
+.dropdown-menu .addressView {
+    white-space: normal;
+}
+
+.dropdown-toggle .addressView p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.addressView {
+    white-space: normal;
+}
+
 .addressView h4 {
-    font-size: 13px
+    font-size: 14px;
+    margin: 0 0 4px;
 }
 
 .addressView p {
@@ -324,6 +355,7 @@
     height: 130px;
     border-radius: 5px;
     text-align: left;
+    overflow: hidden;
 }
 
 #deliverySe1ector ul {
@@ -331,11 +363,16 @@
     overflow-y: auto;
 }
 
+#deliveryOptions {
+    padding: 0;
+}
+
 #deliveryOptions button {
     width: 100%;
     text-align: center;
     height: 50px;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .create-record {
@@ -440,7 +477,33 @@ ul.checkout-bar a {
     text-decoration: none;
 }
 
-@media all and (min-width: 800px) {
+@media only screen and (max-width: 500px) {
+    .hideAgreementsOnMobile {
+        display: none;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .hideAgreementsOnMobile {
+        display: none;
+    }
+
+    .checkout-wrap {
+        margin: 20px auto;
+        position: relative;
+        height: auto;
+    }
+
+    ul.checkout-bar {
+        margin: 0;
+    }
+
+    ul.checkout-bar li {
+        padding: 12px 20px 14px 65px;
+    }
+}
+
+@media all and (min-width: 501px) {
     ul.checkout-bar {
         -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
         box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
@@ -476,7 +539,9 @@ ul.checkout-bar a {
 
     ul.checkout-bar li:before {
         height: 45px;
-        left: 39%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
         line-height: 42px;
         position: absolute;
         top: -55px;
@@ -589,211 +654,25 @@ ul.checkout-bar a {
     list-style: circle;
 }
 
-#CardPreview {
-    font-family: "Courier New", Courier, monospace;
-    position: relative;
-    margin: 25px auto 0;
-    width: 264px;
-    height: 165px;
-    -ms-perspective: 600px;
-    -moz-perspective: 600px;
-    -webkit-perspective: 600px;
-    perspective: 600px;
-}
-
-#CardPreview .focus {
-    background: #FFFABB;
-}
-
-#CardPreview .error {
-    background: #D86F6F;
-}
-
-#CardFaces .face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    -ms-transition: all .6s linear;
-    -moz-transition: all .6s linear;
-    -webkit-transition: all .6s linear;
-    transition: all .6s linear;
-    -ms-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-#CardFaces .front {
-    background: url(/img/credit-card.png) top left no-repeat;
-    -ms-transform: rotateY(0deg);
-    -moz-transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-}
-
-#CardFaces .back {
-    background: url(/img/credit-card.png) bottom left no-repeat;
-    -ms-transform: rotateY(-180deg);
-    -moz-transform: rotateY(-180deg);
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-}
-
-#CardFaces.flip .front {
-    -ms-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-}
-
-#CardFaces.flip .back {
-    -ms-transform: rotateY(0deg);
-    -moz-transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-}
-
-#CardPreview .face div {
-    padding: 0 3px;
-    position: absolute;
-}
-
-#CardPreview .Owner {
-    bottom: 10px;
-    left: 20px;
-    font-size: 15px;
-}
-
-#CardPreview .Number {
-    top: 88px;
-    left: 22px;
-    font-size: 19px;
-    font-weight: bold;
-    min-width: 220px;
-}
-
-#CardPreview .Expiry {
-    top: 116px;
-    left: 103px;
-    font-size: 11px
-}
-
-#CardPreview .front .Cvc {
-    top: 76px;
-    right: 30px;
-    font-size: 11px;
-    display: none;
-}
-
-#CardPreview .back .CvcPlace {
-    top: 60px;
-    right: 15px;
-    font-size: 11px;
-    display: inline-block;
-}
-
-#CardPreview.CardType-Amex .front .Cvc {
-    display: inline-block !important;
-}
-
-#CardPreview.CardType-Amex .back .Cvc {
-    display: none !important;
-}
-
-#CardPreview .BrandImg {
-    position: absolute;
-    left: 17px;
-    top: 8px;
-    display: inline-block;
-    width: 100px;
-    height: 32px;
-    overflow: hidden;
-    text-align: left;
-    text-indent: -999px;
-    background: url(../img/card-brands.png) 0 0 no-repeat;
-}
-
-.CardFamily-bonus .BrandImg {
-    background-position: 0 -32px !important;
-}
-
-.CardFamily-axess .BrandImg {
-    background-position: 0 -64px !important;
-}
-
-.CardFamily-maximum .BrandImg {
-    background-position: 0 -96px !important;
-}
-
-.CardFamily-cardfinans .BrandImg {
-    background-position: 0 -128px !important;
-}
-
-.CardFamily-paraf .BrandImg {
-    background-position: 0 -160px !important;
-}
-
-.CardFamily-world .BrandImg {
-    background-position: 0 -192px !important;
-}
-
-#CardPreview .TypeImg {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    display: inline-block;
-    width: 54px;
-    height: 32px;
-    overflow: hidden;
-    text-align: left;
-    text-indent: -999px;
-    background: url(../img/card-types.png) 0 0 no-repeat;
-}
-
-.CardType-Visa .TypeImg {
-    background-position: 0 -32px !important;
-}
-
-.CardType-Master .TypeImg {
-    background-position: 0 -64px !important;
-}
-
-.CardType-Maestro .TypeImg {
-    background-position: 0 -96px !important;;
-}
-
-.CardType-Amex .TypeImg {
-    background-position: 0 -128px !important;;
-}
-
-.CardType-Discover .TypeImg {
-    background-position: 0 -160px !important;;
-}
-
-.CardType-Jcb .TypeImg {
-    background-position: 0 -192px !important;;
-}
-
-.CardType-DinersClub .TypeImg {
-    background-position: 0 -224px !important;;
-}
-
 ul.card_logos {
     display: inline-block;
     margin: 0;
     padding: 0;
 }
 
-.agreementBox{
-    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(231, 231, 231, 0.55) 0%, rgba(255, 255, 255, 0.63) 17%, #feffff 100%) repeat scroll 0 0;
-    border: 2px solid #ebebeb;
+.agreementBox {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(231, 231, 231, 0.55) 0%, rgba(255, 255, 255, 0.63) 17%, #FEFFFF 100%) repeat scroll 0 0;
+    border: 2px solid #EBEBEB;
     border-radius: 4px;
-    color: #7b7b7b;
+    color: #7B7B7B;
     font-size: 12pt;
     font-weight: 700;
     height: 150px;
     overflow: auto;
     padding: 15px 20px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
+}
+
+.paymentOptions {
+    margin: 0 !important;
 }

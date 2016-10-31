@@ -9,8 +9,8 @@
     <div class="container">
         <? if (view::has_blocks()) { ?>
             <div class="row">
-                <? view::show_blocks("col-xs-12 col-md-3 col-sm-3") ?>
-                <? view::show_contents("col-xs-12 col-sm-9 col-md-9") ?>
+                <? view::show_contents("col-sm-9 col-xs-12 pull-right") ?>
+                <? view::show_blocks("col-sm-3 col-xs-12 pull-left") ?>
             </div>
         <? } else { ?>
             <? view::show_contents() ?>

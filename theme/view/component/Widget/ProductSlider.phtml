@@ -1,0 +1,54 @@
+<?
+/**
+ * @var int             $id
+ * @var string          $title
+ * @var \product_item[] $products
+ */
+?>
+<div id="<?= $id ?>" class="carouselContainer">
+    <h2><?= $title ?></h2>
+    <div class="owl-carousel owl-theme owlCarouselImgBot">
+        <? foreach ($products as $key => $product) { ?>
+            <div class="item">
+                <div class="product-list">
+                    <div class="product-wrapper">
+                        <?= $product->generate() ?>
+                    </div><!-- #product-wrapper# -->
+                </div><!-- #product-list# -->
+            </div><!-- #item# -->
+        <? } ?>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#<?=$id?> .owlCarouselImgBot').owlCarousel({
+            responsiveClass: true,
+            nav: true,
+            responsiveBaseElement: '#<?=$id?>',
+            autoplay: true,
+            autoplayTimeout: 4000,
+            autoplayHoverPause: true,
+            margin: 20,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                320: {
+                    items: 2
+                },
+                550: {
+                    items: 3
+                },
+                768: {
+                    items: 4
+                },
+                992: {
+                    items: 6
+                }
+            },
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            navText: ['<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>', '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>']
+        });
+    });
+</script>
