@@ -43,6 +43,22 @@
         "height": 265,
         "limit": 3,
         "sort_by": "Random"
+      },
+      "CategoryNavigation": {
+        "description": "Kategori sayfalarında navigasyondan sonra görünen bannerlar",
+        "group": "Category",
+        "type": "Banner",
+        "width": 560,
+        "limit": 2,
+        "sort_by": "Order"
+      },
+      "CartNavigation": {
+        "description": "Sepet üstünde görünen bannerlar",
+        "group": "Cart",
+        "type": "Banner",
+        "width": 560,
+        "limit": 2,
+        "sort_by": "Order"
       }
     },
     "blockZones": {
