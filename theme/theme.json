@@ -1,8 +1,8 @@
 {
   "theme_tag": "pinkmore",
   "theme_name": "Pink & More",
-  "theme_version": "1.0.0",
-  "compatible_with": "1.0.0",
+  "theme_version": "1.0.1",
+  "compatible_with": "1.0.1",
   "config": {
     "skeletonView": {
       "default": "global",
@@ -99,27 +99,27 @@
         "title": "Ürün Detayı - Alt Alan",
         "description": "Ürün detayında alt alan"
       },
-	  "categoryTop": {
+      "categoryTop": {
         "page": "Category",
         "title": "Kategori Sayfası Navigasyon Altı",
         "description": "Kategori sayfalarında navigasyon altına eklenecek banner, açıklama gibi öğelerin özelleştirilmesini sağlar"
       },
-	  "categoryBottom": {
+      "categoryBottom": {
         "page": "Category",
         "title": "Kategori Sayfası Footer Üstü",
         "description": "Kategori sayfalarında ürün listesi ile footer arasında görünür."
       },
-	  "categorySidebar": {
+      "categorySidebar": {
         "page": "Category",
         "title": "Kategori Sayfası Filtre Altı",
         "description": "Kategori sayfalarında filtre altına eklenecek banner, açıklama gibi öğelerin özelleştirilmesini sağlar"
       },
-	  "cartTop": {
+      "cartTop": {
         "page": "Cart",
         "title": "Sepet Üstü",
         "description": "Sepette, ürünlerin ve sipariş özetinin üzerinde görünür."
       },
-	  "cartBottom": {
+      "cartBottom": {
         "page": "Cart",
         "title": "Sepet Altı",
         "description": "Sepette, ürünlerin ve sipariş özetinin altında görünür."
@@ -133,6 +133,18 @@
         "catalog": 269,
         "normal": 564,
         "mail": 300
+      }
+    },
+    "logos": {
+      "logo": {
+        "name": "Site Logosu",
+        "width": 150,
+        "height": 90
+      },
+      "logo2x": {
+        "name": "Site Logosu (2x)",
+        "width": 300,
+        "height": 180
       }
     }
   }

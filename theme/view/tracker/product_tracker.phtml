@@ -1,0 +1,73 @@
+<?
+/**
+ * @var ob_product $obProduct
+ */
+?>
+<? if (\TeknoETicaret\Config\Settings::get('adwords.remarketing.enabled')) { ?>
+    <? /* BEGIN - Adwords Remarketing */ ?>
+    <script type="text/javascript">
+        var google_tag_params = {
+            ecomm_prodid: "<?=$obProduct->product_id?>",
+            ecomm_pagetype: "product",
+            ecomm_totalvalue: <?=$obProduct->getSalePrice()?>
+        };
+    </script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = <?= \TeknoETicaret\Config\Settings::get('adwords.remarketing.conversionid') ?>;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        var google_conversion_format = 3;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt=""
+                    src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/<?= \TeknoETicaret\Config\Settings::get('adwords.remarketing.conversionid') ?>/?value=0&amp;guid=ON&amp;script=0"/>
+        </div>
+    </noscript>
+    <? /* END - Adwords Remarketing */ ?>
+<? } ?>
+<? /* CRITEO Begin */ ?>
+<? if (\TeknoETicaret\Config\Settings::get('tracking.criteo.enabled') && \TeknoETicaret\Config\Settings::get('tracking.criteo.accountid') > 0) { ?>
+    <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="async"></script>
+    <script type="text/javascript">
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+            {event: "setAccount", account: <?=\TeknoETicaret\Config\Settings::get('tracking.criteo.accountid')?>},
+            <? if (session::isMember()) { ?>
+            {event: "setHashedEmail", email: "<?= md5(strtolower(singleton::member(session::memberId())->email)) ?>"},
+            <? } ?>
+            {event: "setSiteType", type: "<?=(request::getDeviceType() == request::DEVICE_PHONE ? "m" : (request::getDeviceType() == request::DEVICE_TABLET ? "t" : "d"))?>"},
+            {event: "viewItem", item: "<?=$obProduct->product_id?>"}
+        );
+    </script>
+<? } ?>
+<? /* CRITEO END */ ?>
+<!-- Adform Tracking Code BEGIN -->
+<script type="text/javascript">
+    window._adftrack = {
+        pm: 711599,
+        pagename: encodeURIComponent('Product page'),
+        divider: encodeURIComponent('|'),
+        products: [{
+            productid: '<?=$obProduct->product_id?>',
+            step: 2
+        }]
+    };
+    (function () {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<noscript>
+    <p style="margin:0;padding:0;border:0;">
+        <img src="https://track.adform.net/Serving/TrackPoint/?pm=711599&ADFPageName=Product%20page&ADFdivider=|" width="1" height="1" alt=""/>
+    </p>
+</noscript>
+<!-- Adform Tracking Code END -->

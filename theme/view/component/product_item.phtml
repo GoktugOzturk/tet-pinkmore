@@ -4,7 +4,7 @@
  */
 ?>
 <div class="productItem" data-id="<?= $product->obProduct->product_id ?>" data-name="<?= htmlspecialchars($product->obProduct->product_name) ?>"
-    data-url="<?= $product->obProduct->getUrl($product->urlParams) ?>">
+        data-url="<?= $product->obProduct->getUrl($product->urlParams) ?>">
     <div class="itemImg">
         <? if ($product->hoverCartButton) { ?>
             <a href="javascript:void(0);" onclick="addToCart('<?= $product->obProduct->product_id ?>', '1', '<?= $product->from ?>')" class="addToCart" style=""></a>

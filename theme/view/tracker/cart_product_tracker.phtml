@@ -1,0 +1,98 @@
+<?
+/**
+ * @var array                                  $productIds
+ * @var \TeknoETicaret\Shopping\Cart\Cart      $cart
+ * @var \TeknoETicaret\Shopping\Cart\Product[] $cartProducts
+ */
+?>
+<? if (\TeknoETicaret\Config\Settings::get('adwords.remarketing.enabled')) { ?>
+    <? /* BEGIN - Adwords Remarketing */ ?>
+    <script type="text/javascript">
+        var google_tag_params = {
+            ecomm_prodid: ["<?=implode('","', $productIds)?>"],
+            ecomm_pagetype: "cart",
+            ecomm_totalvalue: <?=$cart->getTotalPrice()?>
+        };
+    </script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = <?= \TeknoETicaret\Config\Settings::get('adwords.remarketing.conversionid') ?>;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        var google_conversion_format = 3;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt=""
+                    src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/<?= \TeknoETicaret\Config\Settings::get('adwords.remarketing.conversionid') ?>/?value=0&amp;guid=ON&amp;script=0"/>
+        </div>
+    </noscript>
+    <? /* END - Adwords Remarketing */ ?>
+<? } ?>
+<? /* CRITEO Begin */ ?>
+<? if (\TeknoETicaret\Config\Settings::get('tracking.criteo.enabled') && \TeknoETicaret\Config\Settings::get('tracking.criteo.accountid') > 0) { ?>
+    <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+    <script type="text/javascript">
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+            {event: "setAccount", account: <?=\TeknoETicaret\Config\Settings::get('tracking.criteo.accountid')?>},
+            <? if(session::isMember()) { ?>
+            {event: "setHashedEmail", email: "<?= md5(strtolower(singleton::member(session::memberId())->email)) ?>"},
+            <? } ?>
+            {event: "setSiteType", type: "<?=(request::getDeviceType() == request::DEVICE_PHONE ? "m" : (request::getDeviceType() == request::DEVICE_TABLET ? "t" : "d"))?>"},
+            {
+                event: "viewBasket",
+                item: <?
+                $items = [];
+                foreach ($cartProducts as $cartProduct) {
+                    $items[] = [
+                        'id' => $cartProduct->getModel()->product_id,
+                        'price' => $cartProduct->getTotalPrice() / $cartProduct->getQuantity(),
+                        'quantity' => $cartProduct->getQuantity(),
+                    ];
+                }
+                echo json_encode($items);
+                ?>
+            }
+        );
+    </script>
+<? } ?>
+<? /* CRITEO END */ ?>
+<!-- Adform Tracking Code BEGIN -->
+<?
+$adformProducts = [];
+foreach ($cartProducts as $cartProduct) {
+    $obProduct = $cartProduct->getProduct();
+    $adformProducts[] = [
+        'productid' => $obProduct->product_id,
+        'categoryname' => $obProduct->category_name,
+        'step' => 3,
+    ];
+}
+?>
+<script type="text/javascript">
+    window._adftrack = {
+        pm: 711599,
+        pagename: encodeURIComponent(''),
+        divider: encodeURIComponent('|'),
+        order: {
+            itms: <?=json_encode($adformProducts, JSON_UNESCAPED_UNICODE)?>
+        }
+    };
+    (function () {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<noscript>
+    <p style="margin:0;padding:0;border:0;">
+        <img src="https://track.adform.net/Serving/TrackPoint/?pm=711599&ADFPageName=&ADFdivider=|" width="1" height="1" alt=""/>
+    </p>
+</noscript>
+<!-- Adform Tracking Code END -->

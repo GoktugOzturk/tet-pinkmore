@@ -29,7 +29,7 @@
 <? if (session::isStaff()) { ?>
     <div class="pull-right">
         <a title="Ürünü Düzenle" data-toggle="tooltip" data-placement="left" target="_blank" style="font-size:18px"
-            href="<?= app::getUrl(app::APP_TAG_OASIS) . "/product/summary/" . $obProduct->product_id ?>"> <i class="glyphicon glyphicon-edit"></i> </a>
+                href="<?= app::getUrl(app::APP_TAG_OASIS) . "/product/summary/" . $obProduct->product_id ?>"> <i class="glyphicon glyphicon-edit"></i> </a>
     </div>
 <? } ?>
 <h1 class="productName"><?= $obProduct->full_name ?></h1>
@@ -43,15 +43,9 @@
                 </div>
             <? } ?>
         </div>
-        <?= \TeknoETicaret\Widget\Block::addBlock(
-            'productPhotoUnder',
-            array(
-                'productId' => $obProduct->product_id,
-                'categoryId' => $obProduct->category_id,
-                'brandId' => $obProduct->brand_id,
-            )
-        )
-        ?>
+        <?= \TeknoETicaret\Widget\Block::addBlock('productPhotoUnder',
+            ['productId' => $obProduct->product_id, 'categoryId' => $obProduct->category_id, 'brandId' => $obProduct->brand_id,]
+        ); ?>
     </div>
     <!-- imgArea -->
     <div class="col-md-6 col-sm-6 col-xs-12 productFeature">
@@ -88,7 +82,7 @@
                         <div class="bpG">
                             <? foreach ($propertyData['options'] AS $optionId => $optionData) { ?>
                                 <a href="<?= $optionData['url'] ?>"
-                                    class="bgGroup <?= ((isset($propertyData['selectedOption']) && $propertyData['selectedOption'] == $optionData['option_id']) ? 'active' : '') ?>">
+                                        class="bgGroup <?= ((isset($propertyData['selectedOption']) && $propertyData['selectedOption'] == $optionData['option_id']) ? 'active' : '') ?>">
                                     <span class="boyut"><?= $optionData['name'] ?></span>
                                 </a>
                             <? } ?>
@@ -104,10 +98,10 @@
                             <label><?= $propertyData['name'] ?></label>
                             <div class="clear"></div>
                             <div class="bpG">
-                                <? foreach ($propertyData['options'] AS $optionId => $optionName) { ?>
+                                <? foreach ($propertyData['options'] AS $optionId => $optionData) { ?>
                                     <a href="javascript:" onclick="chooseProperty('<?= $propertyId ?>', '<?= $optionId ?>')" id="property-<?= $propertyId ?>-<?= $optionId ?>"
-                                        class="bgGroup <?= ((isset($propertyData['selected']) && $propertyData['selected'] == $optionId) ? 'active' : '') ?>">
-                                        <span class="boyut"><?= $optionName ?></span>
+                                            class="bgGroup <?= ((isset($propertyData['selected']) && $propertyData['selected'] == $optionId) ? 'active' : '') ?>">
+                                        <span class="boyut"><?= $optionData['name'] ?></span>
                                     </a>
                                 <? } ?>
                             </div>
@@ -140,7 +134,7 @@
                     <a href="javascript:;" onclick="quantity('#productQuantity','down')">-</a>
                     <div>
                         <input name="quantity" id="productQuantity" class="text-center" value="1" type="text" min="1" max="<?= $obProduct->saleableProductCount() ?>"
-                            onblur="quantity($(this))">
+                                onblur="quantity($(this))">
                         <label for="productQuantity">ADET</label>
                     </div>
                     <a href="javascript:;" onclick="quantity('#productQuantity','up')">+</a>
@@ -220,7 +214,7 @@
                         }
                     }
                     if ($obProduct->dimension_width > 0 || $obProduct->dimension_height > 0 || $obProduct->dimension_depth > 0) {
-                        $dimensionArr = array();
+                        $dimensionArr = [];
                         if ($obProduct->dimension_width > 0) {
                             $dimensionArr[] = ' Genişlik: ' . $obProduct->dimension_width . 'cm';
                         }
@@ -237,8 +231,8 @@
                         </tr>
                     <? } ?>
                     <tr>
-                        <th>SKU Kodu</th>
-                        <td><?= $obProduct->sku_code ?></td>
+                        <th>Üretici Kodu</th>
+                        <td><?= $obProduct->mpn_code ?></td>
                     </tr>
                     </tbody>
                 </table>
@@ -283,7 +277,7 @@
                                     <label for="comment_text">Yorumunuz</label> <textarea id="comment_text" name="comment_text" class="form-control" rows="10"></textarea>
                                 </div>
                                 <input type="hidden" name="product" value="<?= $obProduct->product_id ?>"/> <input type="hidden" name="redirect"
-                                    value="<?= $_SERVER['REQUEST_URI'] ?>"/>
+                                        value="<?= $_SERVER['REQUEST_URI'] ?>"/>
                                 <button type="submit" class="btn btn-primary mb">Yorumu Gönder</button>
                             </form>
                         </div>
@@ -313,10 +307,10 @@
 <!-- procductFeature -->
 <div class="clear"></div>
 <?= \TeknoETicaret\Widget\Block::addBlock('productUnder',
-    array(
+    [
         'productId' => $obProduct->product_id,
         'categoryId' => $obProduct->category_id,
         'brandId' => $obProduct->brand_id,
-    )
+    ]
 )
 ?>

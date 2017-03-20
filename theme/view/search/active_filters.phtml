@@ -1,0 +1,14 @@
+<?php
+/**
+ * @var string $clearAllActiveFiltersLink
+ * @var array  $activeFilters
+ */
+?>
+<div class="secimler">
+    <ul class="tags">
+        <? foreach ($activeFilters as $activeFilter) { ?>
+            <li><span><?= $activeFilter['title'] ?></span><a href="<?= $activeFilter['clearLink'] ?>"></a></li>
+        <? } ?>
+    </ul>
+    <a href="<?= $clearAllActiveFiltersLink ?>" class="selectedDelete">TÜM SEÇİMİ SİL</a>
+</div>

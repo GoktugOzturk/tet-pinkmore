@@ -1,0 +1,66 @@
+<?php
+/**
+ * @var bool   $hasActiveFilters
+ * @var string $clearActiveFiltersLink
+ * @var array  $activeFilters
+ * @var array  $parentCategories
+ * @var array  $subCategories
+ * @var array  $filterGroups
+ */
+?>
+<!-- secimler -->
+<div class="clear"></div>
+<div class="filtreContent">
+    <h2>KATEGORİLER</h2>
+    <div class="clear"></div>
+    <ul class="filtreList">
+        <? if (count($parentCategories)) { ?>
+            <? foreach ($parentCategories as $category) { ?>
+                <li class="grid<?= $category['depth'] ?>"><a <?= ($category['active'] ? 'class="active"' : '') ?> href="<?= $category['link'] ?>"><?= $category['title'] ?></a>
+                </li>
+            <? } ?>
+        <? } ?>
+        <? if (count($subCategories)) { ?>
+            <? foreach ($subCategories as $category) { ?>
+                <li class="grid<?= $category['depth'] ?>"><a href="<?= $category['link'] ?>"><?= $category['title'] ?> (<?= $category['resultCount'] ?>)</a></li>
+            <? } ?>
+        <? } ?>
+    </ul>
+    <!-- filtreList -->
+</div>
+<!-- filtreContent -->
+<? if (count($filterGroups)) { ?>
+    <? foreach ($filterGroups as $filterGroup) { ?>
+        <div class="filtreContent">
+            <h3><?= $filterGroup['title'] ?></h3>
+            <div class="clear"></div>
+            <ul class="scrollbar">
+                <? foreach ($filterGroup['items'] as $item) { ?>
+                    <li><a href="<?= $item['link'] ?>"><?= $item['title'] ?> (<?= $item['resultCount'] ?>)</a></li>
+                <? } ?>
+            </ul>
+        </div>
+    <? } ?>
+<? } ?>
+<!-- filtreContent -->
+<? if (false) { ?>
+    <div class="filtreContent">
+        <h2>RENKLER</h2><a href="javascript:;" class="secimleriSil">Seçimleri Sil</a>
+        <div class="clear"></div>
+        <ul class="colors">
+            <li class="sari"><a href="javascript:;"></a></li>
+            <li class="mavi"><a href="javascript:;"></a></li>
+            <li class="turuncu active"><a href="javascript:;"></a></li>
+            <li class="pembe"><a href="javascript:;"></a></li>
+            <li class="kirmizi active"><a href="javascript:;"></a></li>
+            <li class="turkuaz"><a href="javascript:;"></a></li>
+            <li class="yesil"><a href="javascript:;"></a></li>
+            <li class="mor"><a href="javascript:;"></a></li>
+            <li class="acikTurkaz"><a href="javascript:;"></a></li>
+        </ul>
+        <!-- colors -->
+    </div>
+<? } ?>
+<!-- filtreContent -->
+
+

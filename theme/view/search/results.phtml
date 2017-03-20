@@ -1,6 +1,7 @@
 <?
 /**
- * @var string       $filterHtml
+ * @var string       $activeFiltersHtml
+ * @var string       $facetHtml
  * @var string       $descriptionBlock
  * @var ob_category  $category
  * @var ob_brand     $brand
@@ -17,10 +18,19 @@
 <div class="katMenu">
     <span class="leftMenuTitle">Kategori</span>
 </div>
+<? if (!isset($qs) && isset($category)) { ?>
+    <div id="categoryBanner">
+        <?= \TeknoETicaret\Widget\Block::addBlock('categoryTop', ['categoryId' => $category->category_id]) ?>
+    </div>
+<? } ?>
 <!-- katMenu -->
 <div class="row">
     <div class="col-sm-12 col-md-3 col-xs-12" id="filtreler">
-        <?= $filterHtml ?>
+        <div class="filtreler">
+            <h2 class="topH">ÜRÜNLERİ FİLTRELE</h2>
+            <?= $activeFiltersHtml ?>
+            <?= $facetHtml ?>
+        </div>
         <?= (isset($descriptionBlock) ? $descriptionBlock : '') ?>
         <!-- filtreler -->
     </div>
@@ -59,7 +69,7 @@
                 if (isset($baseUrl)) {
                     $url = parse_url($baseUrl);
                 } else {
-                    $url = array('path' => "/ara");
+                    $url = ['path' => "/ara"];
                 }
                 foreach ($sortLinks as $sortLink) {
                     if (isset($sortLink['orderType'])) {
@@ -68,7 +78,7 @@
                     $url['query'] = $sortLink['linkQuery'];
                     ?>
                     <li class="<?= $sortLink['isActive'] ? 'active' : '' ?>"><a href="<?= icms::build_url($url) ?>"
-                            class="<?= $sortLink['class'] ?>"><?= $sortLink['title'] ?></a></li>
+                                class="<?= $sortLink['class'] ?>"><?= $sortLink['title'] ?></a></li>
                 <? } ?>
             </ul>
         <? } ?>

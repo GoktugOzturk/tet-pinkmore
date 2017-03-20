@@ -106,6 +106,31 @@
     background-color: #F06892;
 }
 
+.buttonCheckout {
+    background-color: #EF4177;
+    border-color: #EF4177;
+    color: #FFF !important;
+}
+
+.buttonCheckout:hover, .buttonCheckout:focus, .buttonCheckout:active, .buttonCheckout.active, .open .dropdown-toggle.buttonCheckout {
+    background-color: #FA4278;
+    border-color: #FA4278;
+}
+
+.buttonCheckout:active, .buttonCheckout.active, .open .dropdown-toggle.buttonCheckout, .buttonCheckout.active.focus, .buttonCheckout.active:focus, .buttonCheckout.active:hover, .buttonCheckout.focus:active, .buttonCheckout:active:focus, .buttonCheckout:active:hover, .open > .dropdown-toggle.buttonCheckout.focus, .open > .dropdown-toggle.buttonCheckout:focus, .open > .dropdown-toggle.buttonCheckout:hover {
+    background-color: #D63F6B;
+    border-color: #D63F6B;
+}
+
+.buttonCheckout.disabled, .buttonCheckout[disabled], fieldset[disabled] .buttonCheckout, .buttonCheckout.disabled:hover, .buttonCheckout[disabled]:hover, fieldset[disabled] .buttonCheckout:hover, .buttonCheckout.disabled:focus, .buttonCheckout[disabled]:focus, fieldset[disabled] .buttonCheckout:focus, .buttonCheckout.disabled:active, .buttonCheckout[disabled]:active, fieldset[disabled] .buttonCheckout:active, .buttonCheckout.disabled.active, .buttonCheckout[disabled].active, fieldset[disabled] .buttonCheckout.active {
+    background-color: #FF95C0;
+    border-color: #FF95C0;
+}
+
+.buttonCheckout .badge {
+    color: #FF95C0;
+}
+
 /*.cartPage .col-xs-4 { background-color: #fffcfb}*/
 .orderSummaryDetails .orderArea {
     padding-bottom: 5px;
@@ -221,8 +246,8 @@
 
 #paymentOptions {
     border: 1px solid #E1E1E1;
+    padding: 10px 30px 30px;
     border-top: 0;
-    padding: 0 10px 10px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
