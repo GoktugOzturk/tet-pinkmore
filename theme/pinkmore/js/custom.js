@@ -5,15 +5,13 @@ $(document).ready(function () {
     }).on("mouseleave", function () {
         $(this).find(".addToCart").css("display", "none")
     });
+    var winW = $(window).width();
     $(".tumkategoriler").click(function () {
         $("#tumkategorilerBlock").toggle();
-    });
-    var winW = $(window).width();
-    if (winW < 992) {
-        $(".tumkategoriler").click(function () {
+        if (winW < 992) {
             $("#tumkategorilerBlockIndex").toggle();
-        });
-    }
+        }
+    });
     // if (winW < 767) {
     // 		var ZWrapper = $(".zoomWrapper").height();
     // 		alert(ZWrapper);
@@ -33,8 +31,7 @@ $(document).ready(function () {
         $(this).parent().toggleClass("active");
     });
     $(".kategoriMbl li").click(function () {
-        $(".kategoriMbl li").find('.kategoriMblAlt').hide();
-        $(".kategoriMbl li").removeClass("active");
+        $(".kategoriMbl li").removeClass("active").find('.kategoriMblAlt').hide();
         $(this).find('.kategoriMblAlt').toggle();
         $(this).toggleClass("active");
     });
@@ -50,7 +47,6 @@ $(document).ready(function () {
         });
         $('.owl-product').owlCarousel({
             items: 1,
-            lazyLoad: true,
             loop: true,
             margin: 10,
             singleItem: true
@@ -84,7 +80,7 @@ $(document).ready(function () {
         data[i] = $(".lazySay:eq(" + i + ")").find('img').attr("src");
     }
     for (var j = 0; j < elems; j++) {
-        $(".owl-product .owl-controls").find(".owl-dots").find(".owl-dot:eq(" + j + ")").append('  <img src="' + data[j] + '" >	');
+        $(".owl-product").find(".owl-dots").find(".owl-dot:eq(" + j + ")").append('  <img src="' + data[j] + '" >	');
     }
 // pink more
     // $(window).resize(function () {
@@ -106,8 +102,7 @@ $(document).ready(function () {
         $(".katMenu").addClass("active");
     });
     $(".blockL").click(function () {
-        $("body").removeClass("active");
-        $("body").removeClass("activeR");
+        $("body").removeClass("active").removeClass("activeR");
         $(".blockL").removeClass("active");
         $(".leftMenu").removeClass("active");
         $(".rightMenu").removeClass("active");
@@ -134,5 +129,4 @@ $(document).ready(function () {
         $(this).hide();
         $(".yBarInput").show();
     });
-
 });

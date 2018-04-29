@@ -1,15 +1,9 @@
-<?
-/**
- * @var ob_product $obProduct
- */
-?>
 <? if (\TeknoETicaret\Config\Settings::get('adwords.remarketing.enabled')) { ?>
     <? /* BEGIN - Adwords Remarketing */ ?>
     <script type="text/javascript">
         var google_tag_params = {
-            ecomm_prodid: "<?=$obProduct->product_id?>",
-            ecomm_pagetype: "product",
-            ecomm_totalvalue: <?=$obProduct->getSalePrice()?>
+            ecomm_prodid: "",
+            ecomm_pagetype: "home"
         };
     </script>
     <script type="text/javascript">
@@ -40,53 +34,15 @@
             {event: "setHashedEmail", email: "<?= md5(strtolower(singleton::member(session::memberId())->email)) ?>"},
             <? } ?>
             {event: "setSiteType", type: "<?=(request::getDeviceType() == request::DEVICE_PHONE ? "m" : (request::getDeviceType() == request::DEVICE_TABLET ? "t" : "d"))?>"},
-            {event: "viewItem", item: "<?=$obProduct->product_id?>"}
+            {event: "viewHome"}
         );
     </script>
 <? } ?>
 <? /* CRITEO END */ ?>
-<!-- Adform Tracking Code BEGIN -->
-<script type="text/javascript">
-    window._adftrack = {
-        pm: 711599,
-        pagename: encodeURIComponent('Product page'),
-        divider: encodeURIComponent('|'),
-        products: [{
-            productid: '<?=$obProduct->product_id ?>',
-            step: 2
-        }]
-    };
-    (function () {
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/';
-        var x = document.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
-    })();
-</script>
-<noscript>
-    <p style="margin:0;padding:0;border:0;">
-        <img src="https://track.adform.net/Serving/TrackPoint/?pm=711599&ADFPageName=Product%20page&ADFdivider=|" width="1" height="1" alt=""/>
-    </p>
-</noscript>
-<!-- Adform Tracking Code END -->
-<!---------------------------Product Pixel Start---------------------------------- -->
 <script type='text/javascript'>
     rtgsettings = {
-        'pdt_id': '<?=$obProduct->product_id ?>',
-        'pdt_sku': '<?=$obProduct->sku_code ?>',
-        'pdt_name': '<?=$obProduct->product_name ?>',
-        'pdt_price': '<?=$obProduct->sale_price ?>',
-        'pdt_amount': '<?=$obProduct->saleableProductCount() ?>',
-        'pdt_currency': 'TRY',
         'pdt_url': '<?=json_encode('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'])?>',
-        'pdt_photo': '<?=$obProduct->getPhoto() ?>',
-        'pdt_instock': '<?=$obProduct->is_saleable ? 'true' : 'false' ?>',
-        'pdt_expdate': '',
-        'pdt_category_list': '<?=$obProduct->category_name ?>',
-        'pdt_smalldescription': '',
-        'pagetype': 'product',
+        'pagetype': 'home',
         'key': 'RA',
         'token': 'PinkMore_TR',
         'layer': 'iframe'
@@ -101,4 +57,3 @@
         a.parentNode.insertBefore(s, a);
     }(document));
 </script>
-<!---------------------------Product Pixel END---------------------------------- -->

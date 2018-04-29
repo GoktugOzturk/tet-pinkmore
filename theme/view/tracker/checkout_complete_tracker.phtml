@@ -130,3 +130,34 @@ foreach ($orderProducts as $orderProduct) {
     </p>
 </noscript>
 <!-- Adform Tracking Code END -->
+<!---------------------------checkout Pixel Start---------------------------------- -->
+<script type='text/javascript'>
+    rtgsettings = {
+        'pdt_id': '<?=$productIds?>',
+        'pdt_sku': '',
+        'pdt_category_list': '',
+        'ty_orderid': '<?= $orderCode ?>',
+        'ty_orderamt': '<?=$orderTotalAmount?>',
+        'ty_orderdate': '<?=date('Y.m.d')?>',
+        'ty_orderstatus': '',
+        'ty_currency': 'TRY',
+        'ty_cusname': '',
+        'ty_cusid': '<?=$order->member_id?>',
+        'ty_custype': '',
+        'ty_cuscoupon': '',
+        'pagetype': 'checkout',
+        'key': 'RA',
+        'token': 'PinkMore_TR',
+        'layer': 'iframe'
+    };
+    (function (d) {
+        var s = d.createElement('script');
+        s.async = true;
+        s.id = 'madv2014rtg';
+        s.type = 'text/javascript';
+        s.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.mainadv.com/Visibility/Rtgra2-min.js';
+        var a = d.getElementsByTagName('script')[0];
+        a.parentNode.insertBefore(s, a);
+    }(document));
+</script>
+<!---------------------------Checkout Pixel END---------------------------------- -->

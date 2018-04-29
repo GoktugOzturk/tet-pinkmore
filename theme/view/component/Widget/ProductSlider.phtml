@@ -22,13 +22,15 @@
 <script>
     $(document).ready(function () {
         $('#<?=$id?> .owlCarouselImgBot').owlCarousel({
-            responsiveClass: true,
+            loop: true,
+            margin: 20,
             nav: true,
-            responsiveBaseElement: '#<?=$id?>',
+            dots: false,
             autoplay: true,
             autoplayTimeout: 4000,
             autoplayHoverPause: true,
-            margin: 20,
+            responsiveClass: true,
+            responsiveBaseElement: '#<?=$id?>',
             responsive: {
                 0: {
                     items: 1

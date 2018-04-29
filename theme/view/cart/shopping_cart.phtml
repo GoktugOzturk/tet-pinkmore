@@ -165,14 +165,14 @@ $coupon = $cart->getCoupon();
                                 <div class="col-md-6 col-sm-12 col-xs-6 itemQuantity text-center">
                                     <div class="productQuantity">
                                         <div class="input-group" style="margin:0 auto">
-                                        <span class="input-group-btn"><button onclick="quantity('#qty-<?= $obProduct->product_id ?>','down')" class="btn btn-default btn-xs"
+                                        <span class="input-group-btn"><button onclick="changeQuantity('#qty-<?= $obProduct->product_id ?>','down')" class="btn btn-default btn-xs"
                                                     type="button">
                                                 <i class="glyphicon glyphicon-minus"></i></button></span>
                                             <input type="text" id="qty-<?= $obProduct->product_id ?>" data-ref="update<?= $obProduct->product_id ?>"
                                                     name="quantity[<?= $obProduct->product_id ?>]" class="form-control input-xs quantity_input text-center" min="0"
                                                     max="<?= $obProduct->saleableProductCount() ?>" value="<?= $product->getQuantity() ?>" title="Ürün Adedi"
-                                                    onblur="quantity($(this))">
-                                            <span class="input-group-btn"><button onclick="quantity('#qty-<?= $obProduct->product_id ?>','up')" class="btn btn-default btn-xs"
+                                                    onblur="changeQuantity($(this))">
+                                            <span class="input-group-btn"><button onclick="changeQuantity('#qty-<?= $obProduct->product_id ?>','up')" class="btn btn-default btn-xs"
                                                         type="button">
                                                 <i class="glyphicon glyphicon-plus"></i></button></span>
                                         </div>
@@ -252,7 +252,7 @@ $coupon = $cart->getCoupon();
                 if (!data) {
                     return alert('Kupon kodu kullanılırken hata oluştu');
                 }
-                if (data.Status && data.Status == 'OK') {
+                if (data.Status && data.Status === 'OK') {
                     window.location = '/cart';
                     return true;
                 }
@@ -271,7 +271,7 @@ $coupon = $cart->getCoupon();
             url: "/cart/useShoppingCheck",
             data: "shopping_check=" + check
         }).done(function (data) {
-            if (data == "OK") {
+            if (data === "OK") {
                 window.location = '/cart';
             } else {
                 alert(data);

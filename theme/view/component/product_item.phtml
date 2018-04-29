@@ -43,7 +43,7 @@
                 <span class="freeShipping">KARGO BEDAVA</span>
             <? } ?>
             <? if ($product->fastShipping && $product->obProduct->warehouse_stock) { ?>
-                <? if ($product->limitedStock && $product->obProduct->warehouse_stock <= 5) { ?>
+                <? if ($product->limitedStock && $product->obProduct->warehouse_stock > 0 && $product->obProduct->warehouse_stock <= 5) { ?>
                     <span class="limitedStock">SON <?= $product->obProduct->warehouse_stock ?> ÜRÜN</span>
                 <? } else { ?>
                     <span class="fastShipping">HIZLI KARGO</span>

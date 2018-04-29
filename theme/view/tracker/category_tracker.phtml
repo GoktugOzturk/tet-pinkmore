@@ -82,3 +82,24 @@ $adformProducts = [
     </p>
 </noscript>
 <!-- Adform Tracking Code END -->
+<!---------------------------Category Pixel Start---------------------------------- -->
+<script type='text/javascript'>
+    rtgsettings = {
+        'pdt_url': '<?=json_encode('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'])?>',
+        'pdt_category_list': '<?=$category->category_name?>',
+        'pagetype': 'category',
+        'key': 'RA',
+        'token': 'PinkMore_TR',
+        'layer': 'iframe'
+    };
+    (function (d) {
+        var s = d.createElement('script');
+        s.async = true;
+        s.id = 'madv2014rtg';
+        s.type = 'text/javascript';
+        s.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.mainadv.com/Visibility/Rtgra2-min.js';
+        var a = d.getElementsByTagName('script')[0];
+        a.parentNode.insertBefore(s, a);
+    }(document));
+</script>
+<!---------------------------Category Pixel END---------------------------------- -->

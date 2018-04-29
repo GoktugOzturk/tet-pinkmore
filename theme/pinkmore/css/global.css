@@ -856,20 +856,31 @@ div.clear {
         height: 462px;*/
 }
 
-.owl-dot img {
-    width: 70px;
-    height: 70px;
-    border: 2px solid #B2B2B2;
-    float: left;
-    margin-right: 30px;
-}
-
-.owl-dot.active img {
-    border: 2px solid #F06892;
-}
-
 .owl-product .owl-dots {
     margin-top: 20px;
+}
+
+.owl-dots {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.owl-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #B2B2B2;
+    background: #FFF;
+    margin: 0 7px;
+}
+
+.owl-dot.active {
+    border: 2px solid #F06892;
 }
 
 .logo {
@@ -2221,27 +2232,17 @@ a:hover, a:focus {
     float: left;
 }
 
-.slider .owl-controls {
-    display: table;
-    margin: 0 auto;
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    width: 95px;
-}
-
-.slider .owl-controls .owl-dot {
+.slider .owl-dot {
+    display: inline-block;
     width: 14px;
     height: 14px;
     background: #E1E1E1;
-    float: left;
     margin-right: 5px;
     border-radius: 100%;
-    border: 1px solid #f16893;
+    border: 1px solid #F16893;
 }
 
-.slider .owl-controls .owl-dot.active {
+.slider .owl-dot.active {
     background: #F16893;
     /*border: 1px solid #e1e1e1;*/
 }
@@ -2328,7 +2329,7 @@ a:hover, a:focus {
     font-weight: normal;
 }
 
-.owlCarouselC .owl-controls .owl-dots {
+.owlCarouselC .owl-dots {
     position: absolute;
     right: 15px;
     top: -42px;
@@ -2360,7 +2361,7 @@ a:hover, a:focus {
     position: absolute;
 }
 
-.owlCarouselImgBot .owl-controls {
+.owlCarouselImgBot .owl-nav {
     width: 75px;
     position: absolute;
     top: -57px;
@@ -2374,7 +2375,7 @@ a:hover, a:focus {
     float: left;
 }
 
-.owlCarouselC .owl-controls .owl-dots .owl-dot {
+.owlCarouselC .owl-dots .owl-dot {
     width: 11px;
     height: 11px;
     margin-left: 6px;
@@ -2383,18 +2384,18 @@ a:hover, a:focus {
     border-radius: 100%;
 }
 
-.owlCarouselC .owl-controls .owl-dots .owl-dot.active {
+.owlCarouselC .owl-dots .owl-dot.active {
     background: #F06892;
 }
 
-.owlCarouselImgBot .owl-controls {
+.owlCarouselImgBot .nav {
     width: 75px;
     position: absolute;
     top: -57px;
     right: 0;
 }
 
-.owlCarouselImgBot .owl-controls .owl-prev, .owlCarouselImgBot .owl-controls .owl-next {
+.owlCarouselImgBot .owl-prev, .owlCarouselImgBot .owl-next {
     width: 30px;
     height: 30px;
     background: #F9C3D3;
@@ -2403,7 +2404,7 @@ a:hover, a:focus {
     border-radius: 100%;
 }
 
-.owlCarouselImgBot .owl-controls span {
+.owlCarouselImgBot .owl-dots span, .owlCarouselImgBot .owl-nav span {
     color: #FFF !important;
 }
 
@@ -2968,7 +2969,7 @@ footer p {
         padding-bottom: 37px;
     }
 
-    .owlCarouselC .owl-controls .owl-dots {
+    .owlCarouselC .owl-dots {
         display: none !important;
     }
 
@@ -3034,7 +3035,7 @@ footer p {
         margin-bottom: 20px !important;
     }
 
-    .owlCarouselC .owl-controls .owl-nav {
+    .owlCarouselC .owl-nav {
         top: 47px;
     }
 
@@ -3170,4 +3171,23 @@ footer p {
     font-size: 18px;
     color: #53667B;
     font-family: 'ProximaNova-Bold';
+}
+
+.ratio-box {
+    position: relative;
+    height: 0;
+    display: block;
+    width: 100%;
+    /* padding-bottom is calculated and rendered in to HTML */
+}
+
+.ratio-box img,
+.ratio-box iframe,
+.ratio-box video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
 }

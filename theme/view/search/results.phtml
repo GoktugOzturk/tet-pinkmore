@@ -10,6 +10,7 @@
  * @var int          $numFound
  * @var ob_product[] $products
  * @var string       $paginationUrl
+ * @var string       $paginationWidgetHtml
  * @var int          $totalPage
  * @var int          $currentPage
  * @var string       $qs
@@ -115,11 +116,8 @@
                                         <? if ($product->getReviewCount() > 0) { ?>
                                             <? $rating = $product->getRating(); ?>
                                             <? if ($rating->getCount() > 0) { ?>
-                                                <div class="star">
+                                                <div class="rating">
                                                     <div class="stars pull-left" data-score="<?= $rating->getScore() ?>" data-readonly="true"></div>
-                                                    <? if ($product->getReviewCount() > 0) { ?>
-                                                        <div class="personCount">(<?= $product->getReviewCount() ?>)</div>
-                                                    <? } ?>
                                                 </div>
                                             <? } ?>
                                         <? } ?>
@@ -159,11 +157,11 @@
     <!-- #productList -->
     <? if (isset($paginationUrl) && $paginationUrl && $totalPage > 1) { ?>
         <div class="paginationStyle c col-xs-12">
-            <?= pagination::renderPagination($currentPage, $totalPage, $paginationUrl) ?>
+            <?= $paginationWidgetHtml ?>
         </div>
     <? } ?>
     <div class="mblFilter">
-        <a href="javascript:;">
+        <a href="javascript:">
             <span class="glyphicon glyphicon-filter"></span> Filtrele
         </a>
     </div>

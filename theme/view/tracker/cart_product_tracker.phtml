@@ -1,6 +1,7 @@
 <?
 /**
  * @var array                                  $productIds
+ * @var array                                  $productSkus
  * @var \TeknoETicaret\Shopping\Cart\Cart      $cart
  * @var \TeknoETicaret\Shopping\Cart\Product[] $cartProducts
  */
@@ -96,3 +97,29 @@ foreach ($cartProducts as $cartProduct) {
     </p>
 </noscript>
 <!-- Adform Tracking Code END -->
+<!---------------------------Basket Pixel Start---------------------------------- -->
+<script type='text/javascript'>
+    rtgsettings = {
+        'pdt_id': '<?=implode('","', $productIds)?>',
+        'pdt_sku': '',
+        'pdt_category_list': '',
+        'pdt_url': '',
+        'ty_orderamt': '<?=$cart->getTotalPrice()?>',
+        'ty_orderdate': '<?=date('Y.m.d')?>',
+        'ty_orderstatus': '',
+        'pagetype': 'basket',
+        'key': 'RA',
+        'token': 'PinkMore_TR',
+        'layer': 'iframe'
+    };
+    (function (d) {
+        var s = d.createElement('script');
+        s.async = true;
+        s.id = 'madv2014rtg';
+        s.type = 'text/javascript';
+        s.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.mainadv.com/Visibility/Rtgra2-min.js';
+        var a = d.getElementsByTagName('script')[0];
+        a.parentNode.insertBefore(s, a);
+    }(document));
+</script>
+<!---------------------------Basket Pixel END---------------------------------- -->

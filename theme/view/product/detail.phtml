@@ -13,7 +13,6 @@
  * @var bool                                 $hasVisiblePriceCampaign
  * @var bool                                 $hasAvailableShoppingCheck
  * @var bool                                 $inStock
- * @var string                               $productDetails
  * @var array                                $productHasProperty
  * @var stdClass                             $reviewData
  * @var string                               $semanticData
@@ -22,6 +21,7 @@
  * @var float                                $minInstallmentAmount
  * @var int                                  $bestInstallmentCount
  * @var float                                $bestInstallmentAmount
+ * @var string                               $tabs
  */
 ?>
 <? view::show_breadcrumbs() ?>
@@ -29,18 +29,16 @@
 <? if (session::isStaff()) { ?>
     <div class="pull-right">
         <a title="Ürünü Düzenle" data-toggle="tooltip" data-placement="left" target="_blank" style="font-size:18px"
-                href="<?= app::getUrl(app::APP_TAG_OASIS) . "/product/summary/" . $obProduct->product_id ?>"> <i class="glyphicon glyphicon-edit"></i> </a>
+                href="<?= app::getUrl(app::APP_TAG_OASIS, 'http') . "/product/summary/" . $obProduct->product_id ?>"> <i class="glyphicon glyphicon-edit"></i> </a>
     </div>
 <? } ?>
 <h1 class="productName"><?= $obProduct->full_name ?></h1>
 <div class="clear"></div>
 <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-12 imgArea">
-        <div class="owl-product">
+        <div class="owl-carousel owl-product">
             <? foreach ($productPhotos as $key => $photo) { ?>
-                <div class="owl-lazy lazySay">
-                    <img src="<?= $photo['normal'] ?>" alt="">
-                </div>
+                <img src="<?= $photo['normal'] ?>" alt="">
             <? } ?>
         </div>
         <?= \TeknoETicaret\Widget\Block::addBlock('productPhotoUnder',
@@ -61,7 +59,7 @@
                                 if (data.readonly) {
                                     $('.productRating').raty({readOnly: true, score: <?= $rating->getScore() ?>});
                                 }
-                                if (typeof data.message != "undefined") {
+                                if (typeof data.message !== "undefined") {
                                     alert(data.message);
                                 }
                             });
@@ -131,20 +129,20 @@
                 </div>
                 <!-- productDetailPrice -->
                 <div class="piece">
-                    <a href="javascript:;" onclick="quantity('#productQuantity','down')">-</a>
+                    <a href="javascript:" onclick="changeQuantity('#productQuantity','down')">-</a>
                     <div>
                         <input name="quantity" id="productQuantity" class="text-center" value="1" type="text" min="1" max="<?= $obProduct->saleableProductCount() ?>"
-                                onblur="quantity($(this))">
+                                onblur="changeQuantity($(this))">
                         <label for="productQuantity">ADET</label>
                     </div>
-                    <a href="javascript:;" onclick="quantity('#productQuantity','up')">+</a>
+                    <a href="javascript:" onclick="changeQuantity('#productQuantity','up')">+</a>
                 </div>
                 <!-- piece -->
                 <div class="clear"></div>
                 <input type="hidden" id="productId" value="<?= $obProduct->product_id ?>"/>
                 <input type="hidden" id="fromSource" value="<?= (isset($_GET['from']) ? $_GET['from'] : '') ?>"/>
                 <input type="hidden" id="productPrice" value="<?= round($obProduct->getSalePrice(), 2) ?>"/>
-                <a href="javascript:;" class="gotoBasket" onclick="addToCart($('#productId').val(), $('#productQuantity').val(), $('#fromSource').val());">
+                <a href="javascript:" class="gotoBasket" onclick="addToCart($('#productId').val(), $('#productQuantity').val(), $('#fromSource').val());">
                     <span class="gotoBasketImg"></span>
                     <span class="gotoBasketText">SEPETE EKLE</span>
                 </a>
@@ -179,117 +177,7 @@
             <? } ?>
         </div>
         <div class="clear"></div>
-        <ul class="nav nav-tabs" role="tablist">
-            <li><a href="#tabDetails" role="tab" data-toggle="tab">ÜRÜN AÇIKLAMASI</a></li>
-            <li><a href="#tabComments" role="tab" data-toggle="tab">ÜRÜN YORUMLARI</a></li>
-            <li><a href="#tabInstallments" role="tab" data-toggle="tab" data-target="#tabInstallments" data-url="/product/get_installment_options/<?= $obProduct->product_id ?>">TAKSİT
-                    SEÇENEKLERİ</a></li>
-        </ul>
-        <!-- tabMenu -->
-        <div class="clear"></div>
-        <div class="tab-content">
-            <div id="tabDetails" class="tab-pane fade in active">
-                <div class="mt"><?= $productDetails ?></div>
-                <table class="table table-bordered table-striped mt">
-                    <colgroup>
-                        <col class="col-xs-2">
-                        <col class="col-xs-7">
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th>Özellik</th>
-                        <th>Detayları</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?
-                    if ($productHasProperty) {
-                        foreach ($productHasProperty as $row) {
-                            ?>
-                            <tr>
-                                <th><?= $row['key'] ?></th>
-                                <td><?= $row['val'] ?></td>
-                            </tr>
-                            <?
-                        }
-                    }
-                    if ($obProduct->dimension_width > 0 || $obProduct->dimension_height > 0 || $obProduct->dimension_depth > 0) {
-                        $dimensionArr = [];
-                        if ($obProduct->dimension_width > 0) {
-                            $dimensionArr[] = ' Genişlik: ' . $obProduct->dimension_width . 'cm';
-                        }
-                        if ($obProduct->dimension_height > 0) {
-                            $dimensionArr[] = ' Uzunluk: ' . $obProduct->dimension_height . 'cm';
-                        }
-                        if ($obProduct->dimension_depth > 0) {
-                            $dimensionArr[] = ' Derinlik: ' . $obProduct->dimension_depth . 'cm';
-                        }
-                        ?>
-                        <tr>
-                            <th>Boyutlar</th>
-                            <td><?= (empty($dimensionArr)) ? '' : implode(',', $dimensionArr) ?></td>
-                        </tr>
-                    <? } ?>
-                    <tr>
-                        <th>Üretici Kodu</th>
-                        <td><?= $obProduct->mpn_code ?></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div id="tabComments" class="tab-pane fade">
-                <?= view::load("product/reviews", ['reviewData' => $reviewData]); ?>
-                <div class="row productAddReview">
-                    <? if ($reviewData->myCommentWaiting) { ?>
-                        <div class="col-xs-12">
-                            <h4>YORUMUNUZ ONAY BEKLİYOR</h4>
-                            <span class="commentWaiting">Bu ürüne yazdığınız yorum onay bekliyor. Anlayışınız için teşekkür ederiz.</span>
-                        </div>
-                    <? } elseif (session::memberId()) { ?>
-                        <div class="col-xs-12">
-                            <h4>YORUMUNUZU YAZIN</h4>
-                            <form role="form" action="/product/add_comment" method="POST" onsubmit="return checkCommentForm(this)" id="frmComment">
-                                <div class="form-group">
-                                    <label for="comments">Ürün Değerlendirmeniz</label>
-                                    <div class="personelScore clearfix">
-                                        <div class="rating">
-                                            <div id="commentStar" class="pull-left"></div>
-                                            <span id="ratingHint"></span>
-                                        </div>
-                                        <script>
-                                            $(function () {
-                                                $('#commentStar').raty({
-                                                    click: function (score) {
-                                                        $('input[name=comment_rating]').val(score);
-                                                    },
-                                                    target: '#ratingHint',
-                                                    targetKeep: true
-                                                });
-                                            });
-                                        </script>
-                                        <input type="hidden" name="comment_rating" value="0">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="comment_title">Yorum Başlığı</label> <input type="text" id="comment_title" name="comment_title" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="comment_text">Yorumunuz</label> <textarea id="comment_text" name="comment_text" class="form-control" rows="10"></textarea>
-                                </div>
-                                <input type="hidden" name="product" value="<?= $obProduct->product_id ?>"/> <input type="hidden" name="redirect"
-                                        value="<?= $_SERVER['REQUEST_URI'] ?>"/>
-                                <button type="submit" class="btn btn-primary mb">Yorumu Gönder</button>
-                            </form>
-                        </div>
-                    <? } else { ?>
-                        <div class="col-xs-12 text-center">
-                            <a href="<?= $obProduct->getUrl() . "#tabComments" ?>" class="btn btn-primary mt mb login-required">Yorum yapabilmek için oturum açın</a>
-                        </div>
-                    <? } ?>
-                </div>
-            </div>
-            <div id="tabInstallments" class="tab-pane fade">Yükleniyor...</div>
-        </div>
+        <?= $tabs ?>
     </div>
 </div>
 <script>

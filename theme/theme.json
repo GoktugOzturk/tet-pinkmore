@@ -44,6 +44,12 @@
         "limit": 3,
         "sort_by": "Random"
       },
+      "NavigationMessage": {
+        "description": "Menü'nün altındaki sarı bant",
+        "group": "Global",
+        "type": "Link",
+        "limit": 1
+      }
       "CategoryNavigation": {
         "description": "Kategori sayfalarında navigasyondan sonra görünen bannerlar",
         "group": "Category",

@@ -275,6 +275,7 @@ h1.productName {
     width: 100%;
     font-family: 'ProximaNova-Bold';
     line-height: 42px;
+    text-transform: uppercase;
 }
 
 .nav-tabs li.active {
@@ -306,7 +307,7 @@ h1.productName {
         width: 100%;
     }
 
-    .owlCarouselImgBot .owl-controls {
+    .owlCarouselImgBot .owl-nav {
         width: 65px;
     }
 }
@@ -316,7 +317,7 @@ h1.productName {
         width: 100%;
     }
 
-    .owlCarouselImgBot .owl-controls {
+    .owlCarouselImgBot .owl-nav {
         width: 100%;
         top: 54px;
     }
