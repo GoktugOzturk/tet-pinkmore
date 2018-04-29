@@ -49,7 +49,7 @@
         "group": "Global",
         "type": "Link",
         "limit": 1
-      }
+      },
       "CategoryNavigation": {
         "description": "Kategori sayfalarında navigasyondan sonra görünen bannerlar",
         "group": "Category",
