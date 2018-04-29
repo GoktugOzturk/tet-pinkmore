@@ -48,7 +48,8 @@
         "description": "Menü'nün altındaki sarı bant",
         "group": "Global",
         "type": "Link",
-        "limit": 1
+        "limit": 1,
+        "global": 1
       },
       "CategoryNavigation": {
         "description": "Kategori sayfalarında navigasyondan sonra görünen bannerlar",
